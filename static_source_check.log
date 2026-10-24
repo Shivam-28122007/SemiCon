@@ -1,0 +1,67 @@
+﻿PASS | RTL token balance begin/end: 35/35
+PASS | RTL token balance case/endcase: 2/2
+PASS | RTL token balance module/endmodule: 1/1
+PASS | RTL token balance task/endtask: 0/0
+PASS | TB token balance begin/end: 86/86
+PASS | TB token balance case/endcase: 3/3
+PASS | TB token balance module/endmodule: 1/1
+PASS | TB token balance task/endtask: 11/11
+PASS | RTL top module exists
+PASS | TB top module exists
+PASS | write FIFO present
+PASS | multiple read tags present
+PASS | address alignment checks present
+PASS | 4-KiB crossing checks present
+PASS | testbench contains: ARREADY backpressures when all completion tags are allocated
+PASS | testbench contains: early WLAST burst rejected without TLP
+PASS | testbench contains: 4-KiB-crossing write rejected without TLP
+PASS | testbench contains: misaligned read rejected without TLP
+PASS | testbench contains: 4-KiB-crossing read rejected without TLP
+PASS | testbench contains: duplicate/stale completion rejected after retirement
+PASS | testbench contains: late completion after reset rejected
+PASS | testbench contains: reset clears partial write collection
+PASS | testbench contains: fresh write succeeds after partial-write reset
+PASS | testbench contains: missing/late WLAST burst rejected without TLP
+PASS | testbench contains: W FIFO full deasserts WREADY
+PASS | testbench contains: AW accepted while previous B is pending
+PASS | testbench contains: reset clears stalled B response
+PASS | testbench contains: reset clears stalled R response
+PASS | testbench contains: mixed: MemWr in AW order with correct addr/len/data
+PASS | testbench contains: mixed: MemRd matches an issued AR (addr/len)
+PASS | testbench contains: TX VALID with X/Z payload
+PASS | testbench accepts +seed= plusarg
+PASS | testbench supports gate-level mode
+PASS | package file present: rtl/sarcathon_axi_pcie_bridge.v
+PASS | package file present: phase1_baseline_audit/stage1_baseline_axi4_to_pcie_bridge.v
+PASS | package file present: phase1_baseline_audit/stage1_baseline_tb_axi4_to_pcie_bridge.v
+PASS | package file present: phase1_baseline_audit/BASELINE_MANIFEST.md
+PASS | package file present: phase1_baseline_audit/PHASE1_AUDIT.md
+PASS | package file present: phase2_architecture/PHASE2_ARCHITECTURE.md
+PASS | package file present: phase2_architecture/tb_phase2_directed_axi_pcie_bridge.v
+PASS | package file present: phase2_architecture/tb_perf_enhanced.v
+PASS | package file present: phase2_architecture/tb_perf_baseline.v
+PASS | package file present: phase3_verification/PHASE3_VERIFICATION.md
+PASS | package file present: phase3_verification/tb_phase3_axi_pcie_bridge.v
+PASS | package file present: phase4_synthesis/PHASE4_SYNTHESIS_PPA.md
+PASS | package file present: phase4_synthesis/run_synth.py
+PASS | package file present: phase4_synthesis/ref_declfix.py
+PASS | package file present: phase4_synthesis/rtl_reference/sarcathon_axi_pcie_bridge_phase2.v
+PASS | package file present: phase4_synthesis/reports/ppa_summary.md
+PASS | package file present: phase4_synthesis/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+PASS | package file present: phase5_physical_design/PHASE5_PHYSICAL_DESIGN.md
+PASS | package file present: phase5_physical_design/build_notebook.py
+PASS | package file present: phase5_physical_design/config.json
+PASS | package file present: phase5_physical_design/config_reference.json
+PASS | package file present: phase5_physical_design/pin_order.cfg
+PASS | package file present: phase5_physical_design/SARCathon_Phase5_LibreLane.ipynb
+PASS | notebook embeds current phase5_physical_design/config.json
+PASS | notebook embeds current phase5_physical_design/pin_order.cfg
+PASS | notebook embeds current rtl/sarcathon_axi_pcie_bridge.v
+PASS | notebook embeds current phase5_physical_design/config_reference.json
+PASS | notebook embeds current phase5_physical_design/pin_order.cfg
+PASS | notebook embeds current phase4_synthesis/rtl_reference/sarcathon_axi_pcie_bridge_phase2.v
+PASS | config.json: every dir:: path is embedded in the notebook
+PASS | config_reference.json: every dir:: path is embedded in the notebook
+PASS | PASS/FAIL summary present
+PASS | timeout watchdog present
+STATIC SOURCE CHECKS: 66/66 passed

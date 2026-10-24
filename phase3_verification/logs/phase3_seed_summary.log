@@ -1,0 +1,8 @@
+﻿13579bdf  REGRESSION SUMMARY: checks=748 passed=748 failed=0  Assertion checks=1704 assertion failures=0 (X-on-VALID=617, W-FIFO=675, stall-stability=412)
+00000001  REGRESSION SUMMARY: checks=748 passed=748 failed=0  Assertion checks=1722 assertion failures=0 (X-on-VALID=606, W-FIFO=715, stall-stability=401)
+deadbeef  REGRESSION SUMMARY: checks=793 passed=793 failed=0  Assertion checks=1725 assertion failures=0 (X-on-VALID=634, W-FIFO=671, stall-stability=420)
+2468ace0  REGRESSION SUMMARY: checks=758 passed=758 failed=0  Assertion checks=1734 assertion failures=0 (X-on-VALID=616, W-FIFO=709, stall-stability=409)
+0badf00d  REGRESSION SUMMARY: checks=823 passed=823 failed=0  Assertion checks=1743 assertion failures=0 (X-on-VALID=629, W-FIFO=705, stall-stability=409)
+12345678  REGRESSION SUMMARY: checks=763 passed=763 failed=0  Assertion checks=1703 assertion failures=0 (X-on-VALID=615, W-FIFO=681, stall-stability=407)
+cafef00d  REGRESSION SUMMARY: checks=783 passed=783 failed=0  Assertion checks=1733 assertion failures=0 (X-on-VALID=633, W-FIFO=679, stall-stability=421)
+7fffffff  REGRESSION SUMMARY: checks=738 passed=738 failed=0  Assertion checks=1655 assertion failures=0 (X-on-VALID=576, W-FIFO=706, stall-stability=373)

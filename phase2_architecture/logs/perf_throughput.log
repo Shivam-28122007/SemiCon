@@ -1,0 +1,48 @@
+﻿[perf_base] PERF design=stage1_baseline scenario=write lat=8 cycles=209 beats=64 tlps=64 beats_per_cycle=0.306
+[perf_base] PERF design=stage1_baseline scenario=read lat=8 cycles=721 beats=64 tlps=64 beats_per_cycle=0.089
+[perf_base] PERF design=stage1_baseline data_errors=0
+[perf_ref] PERF design=enhanced scenario=write lat=8 cycles=129 beats=64 tlps=16 beats_per_cycle=0.496
+[perf_ref] PERF design=enhanced scenario=read lat=8 cycles=77 beats=64 tlps=16 beats_per_cycle=0.831
+[perf_ref] PERF design=enhanced data_errors=0
+[perf_opt] PERF design=enhanced scenario=write lat=8 cycles=114 beats=64 tlps=16 beats_per_cycle=0.561
+[perf_opt] PERF design=enhanced scenario=read lat=8 cycles=77 beats=64 tlps=16 beats_per_cycle=0.831
+[perf_opt] PERF design=enhanced data_errors=0
+[perf_base] PERF design=stage1_baseline scenario=write lat=32 cycles=209 beats=64 tlps=64 beats_per_cycle=0.306
+[perf_base] PERF design=stage1_baseline scenario=read lat=32 cycles=2257 beats=64 tlps=64 beats_per_cycle=0.028
+[perf_base] PERF design=stage1_baseline data_errors=0
+[perf_ref] PERF design=enhanced scenario=write lat=32 cycles=129 beats=64 tlps=16 beats_per_cycle=0.496
+[perf_ref] PERF design=enhanced scenario=read lat=32 cycles=173 beats=64 tlps=16 beats_per_cycle=0.370
+[perf_ref] PERF design=enhanced data_errors=0
+[perf_opt] PERF design=enhanced scenario=write lat=32 cycles=114 beats=64 tlps=16 beats_per_cycle=0.561
+[perf_opt] PERF design=enhanced scenario=read lat=32 cycles=173 beats=64 tlps=16 beats_per_cycle=0.370
+[perf_opt] PERF design=enhanced data_errors=0
+[tags=1] PERF design=enhanced scenario=read lat=8 cycles=257 beats=64 tlps=16 beats_per_cycle=0.249
+[tags=1] PERF design=enhanced data_errors=0
+[tags=1] PERF design=enhanced scenario=read lat=32 cycles=641 beats=64 tlps=16 beats_per_cycle=0.100
+[tags=1] PERF design=enhanced data_errors=0
+[tags=1] PERF design=enhanced scenario=read lat=64 cycles=1153 beats=64 tlps=16 beats_per_cycle=0.056
+[tags=1] PERF design=enhanced data_errors=0
+[tags=2] PERF design=enhanced scenario=read lat=8 cycles=133 beats=64 tlps=16 beats_per_cycle=0.481
+[tags=2] PERF design=enhanced data_errors=0
+[tags=2] PERF design=enhanced scenario=read lat=32 cycles=325 beats=64 tlps=16 beats_per_cycle=0.197
+[tags=2] PERF design=enhanced data_errors=0
+[tags=2] PERF design=enhanced scenario=read lat=64 cycles=581 beats=64 tlps=16 beats_per_cycle=0.110
+[tags=2] PERF design=enhanced data_errors=0
+[tags=4] PERF design=enhanced scenario=read lat=8 cycles=77 beats=64 tlps=16 beats_per_cycle=0.831
+[tags=4] PERF design=enhanced data_errors=0
+[tags=4] PERF design=enhanced scenario=read lat=32 cycles=173 beats=64 tlps=16 beats_per_cycle=0.370
+[tags=4] PERF design=enhanced data_errors=0
+[tags=4] PERF design=enhanced scenario=read lat=64 cycles=301 beats=64 tlps=16 beats_per_cycle=0.213
+[tags=4] PERF design=enhanced data_errors=0
+[tags=8] PERF design=enhanced scenario=read lat=8 cycles=77 beats=64 tlps=16 beats_per_cycle=0.831
+[tags=8] PERF design=enhanced data_errors=0
+[tags=8] PERF design=enhanced scenario=read lat=32 cycles=109 beats=64 tlps=16 beats_per_cycle=0.587
+[tags=8] PERF design=enhanced data_errors=0
+[tags=8] PERF design=enhanced scenario=read lat=64 cycles=173 beats=64 tlps=16 beats_per_cycle=0.370
+[tags=8] PERF design=enhanced data_errors=0
+[tags=16] PERF design=enhanced scenario=read lat=8 cycles=77 beats=64 tlps=16 beats_per_cycle=0.831
+[tags=16] PERF design=enhanced data_errors=0
+[tags=16] PERF design=enhanced scenario=read lat=32 cycles=101 beats=64 tlps=16 beats_per_cycle=0.634
+[tags=16] PERF design=enhanced data_errors=0
+[tags=16] PERF design=enhanced scenario=read lat=64 cycles=133 beats=64 tlps=16 beats_per_cycle=0.481
+[tags=16] PERF design=enhanced data_errors=0

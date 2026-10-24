@@ -1,0 +1,3 @@
+﻿13579bdf  REGRESSION SUMMARY: checks=748 passed=748 failed=0  Assertion checks=1029 assertion failures=0 (X-on-VALID=617, W-FIFO=0, stall-stability=412)
+00000001  REGRESSION SUMMARY: checks=748 passed=748 failed=0  Assertion checks=1007 assertion failures=0 (X-on-VALID=606, W-FIFO=0, stall-stability=401)
+deadbeef  REGRESSION SUMMARY: checks=793 passed=793 failed=0  Assertion checks=1054 assertion failures=0 (X-on-VALID=634, W-FIFO=0, stall-stability=420)

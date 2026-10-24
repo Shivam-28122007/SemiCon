@@ -1,0 +1,34 @@
+﻿Yosys: Yosys 0.69+260 (git sha1 dcd59343b, Release, GNU /usr/bin/x86_64-w64-mingw32-g++ 15.2.1)
+Liberty: phase4\lib\sky130_fd_sc_hd__tt_025C_1v80.lib sha256=ec0e1067a35c8bf20b11e58d1e8ac53326067e4dac84a125cc1b917a3518d0d9
+Clock target: 10.0 ns
+Synthesizing stage1_baseline ...
+  area=15038.2 um2 cells=1347 seq=356 leak=6.5 nW delay@10.0ns: unbuffered=6517.24 sized=3001.61 ps
+    @10.0ns sized critical path: pi61 (\rd_burst [1]) -> po25 ($auto$rtlil.cc:3492:MuxGate$4704)
+Synthesizing phase2_reference ...
+  area=118120.8 um2 cells=9275 seq=3088 leak=46.6 nW delay@10.0ns: unbuffered=38062.48 sized=2731.57 ps
+    @10.0ns sized critical path: pi1058 (\s_axi_arlen [0]) -> po1474 ($0\tag_data[0][255:0] [244])
+Synthesizing phase4_opt_fifo16 ...
+  area=99061.3 um2 cells=5649 seq=2655 leak=32.7 nW delay@10.0ns: unbuffered=12083.89 sized=3094.2 ps
+    @10.0ns sized critical path: pi1527 (\s_axi_awlen [0]) -> po732 ($0\wr_error[0:0])
+Synthesizing phase4_optimized ...
+  area=78994.5 um2 cells=5071 seq=2124 leak=26.3 nW delay@10.0ns: unbuffered=11584.92 sized=2778.73 ps
+    @10.0ns sized critical path: pi929 (\s_axi_arlen [1]) -> po281 ($0\tag_done[0][0:0])
+Parameter sweep ...
+# Parameter elaboration sweep: hierarchy -check; proc; check -assert
+# RTL: sarcathon_axi_pcie_bridge.v
+
+PASS  DATA_WIDTH=32, MAX_BEATS=4, TAG_COUNT=4, W_FIFO_DEPTH=8
+PASS  DATA_WIDTH=64, MAX_BEATS=4, TAG_COUNT=4, W_FIFO_DEPTH=8
+PASS  DATA_WIDTH=128, MAX_BEATS=4, TAG_COUNT=4, W_FIFO_DEPTH=8
+PASS  DATA_WIDTH=64, MAX_BEATS=1, TAG_COUNT=1, W_FIFO_DEPTH=2
+PASS  DATA_WIDTH=64, MAX_BEATS=2, TAG_COUNT=2, W_FIFO_DEPTH=4
+PASS  DATA_WIDTH=64, MAX_BEATS=8, TAG_COUNT=8, W_FIFO_DEPTH=16
+PASS  DATA_WIDTH=64, MAX_BEATS=16, TAG_COUNT=16, W_FIFO_DEPTH=32
+PASS  DATA_WIDTH=64, MAX_BEATS=4, TAG_COUNT=3, W_FIFO_DEPTH=5
+PASS  DATA_WIDTH=64, ADDR_WIDTH=64, AXI_ID_WIDTH=8, MAX_BEATS=4, TAG_COUNT=4, W_FIFO_DEPTH=8
+| Configuration | Cell area (um2) | vs Phase 2 | Cells | Sequential | Combinational | Leakage (nW) | Delay @10 ns unbuf / sized (ps) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| stage1_baseline | 15038.2 | -87.3% | 1347 | 356 | 991 | 6.5 | 6517 / 3002 |
+| phase2_reference | 118120.8 | +0.0% | 9275 | 3088 | 6187 | 46.6 | 38062 / 2732 |
+| phase4_opt_fifo16 | 99061.3 | -16.1% | 5649 | 2655 | 2994 | 32.7 | 12084 / 3094 |
+| phase4_optimized | 78994.5 | -33.1% | 5071 | 2124 | 2947 | 26.3 | 11585 / 2779 |

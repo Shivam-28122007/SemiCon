@@ -1,0 +1,8 @@
+﻿(defaults)                                         rc=0 messages=0
+-GDATA_WIDTH=32                                    rc=0 messages=0
+-GDATA_WIDTH=128                                   rc=0 messages=0
+-GMAX_BEATS=1 -GTAG_COUNT=1 -GW_FIFO_DEPTH=2       rc=0 messages=0
+-GMAX_BEATS=8 -GTAG_COUNT=8                        rc=0 messages=0
+-GTAG_COUNT=3 -GW_FIFO_DEPTH=5                     rc=0 messages=0
+-GADDR_WIDTH=64 -GAXI_ID_WIDTH=8                   rc=0 messages=0
+-GMAX_BEATS=16 -GTAG_COUNT=16 -GW_FIFO_DEPTH=32    rc=0 messages=0

@@ -1,0 +1,19 @@
+# phase4_opt_fifo16: ABC timing at 10.0 ns target (typical corner, no wire load)
+unbuffered delay : 12084 ps
+after buffer/size: 3094 ps
+
+unbuffered: start=pi54 (\resp_rd_ptr [0]) end=po426 ($0\tag_sent[0][0:0])
+after buffer/size: start=pi1527 (\s_axi_awlen [0]) end=po732 ($0\wr_error[0:0])
+
+   0  pi                     fanout=7    arrival=0 ps
+   1  xor2_1                 fanout=2    arrival=184 ps
+   2  maj3_1                 fanout=2    arrival=520 ps
+   3  maj3_1                 fanout=2    arrival=913 ps
+   4  maj3_1                 fanout=2    arrival=1305 ps
+   5  maj3_1                 fanout=2    arrival=1697 ps
+   6  maj3_1                 fanout=2    arrival=2083 ps
+   7  maj3_1                 fanout=2    arrival=2474 ps
+   8  maj3_1                 fanout=1    arrival=2822 ps
+   9  o21ai_0                fanout=1    arrival=2892 ps
+  10  o211a_1                fanout=1    arrival=3055 ps
+  11  o22ai_1                fanout=1    arrival=3094 ps

@@ -1,0 +1,20 @@
+# phase2_reference: ABC timing at 10.0 ns target (typical corner, no wire load)
+unbuffered delay : 38062 ps
+after buffer/size: 2732 ps
+
+unbuffered: start=pi198 (\tx_tlp_valid) end=po17 ($auto$rtlil.cc:3492:MuxGate$44476)
+after buffer/size: start=pi1058 (\s_axi_arlen [0]) end=po1474 ($0\tag_data[0][255:0] [244])
+
+   0  pi                     fanout=9    arrival=0 ps
+   1  xor2_1                 fanout=3    arrival=213 ps
+   2  maj3_1                 fanout=3    arrival=543 ps
+   3  a221oi_1               fanout=2    arrival=847 ps
+   4  o31ai_1                fanout=3    arrival=1056 ps
+   5  o2111ai_1              fanout=1    arrival=1190 ps
+   6  a22oi_1                fanout=1    arrival=1372 ps
+   7  o22ai_1                fanout=5    arrival=1518 ps
+   8  nand2_1                fanout=5    arrival=1671 ps
+   9  a21oi_1                fanout=6    arrival=1983 ps
+  10  clkbuf_1               fanout=10   arrival=2281 ps
+  11  clkbuf_1               fanout=10   arrival=2584 ps
+  12  a22o_1                 fanout=1    arrival=2732 ps

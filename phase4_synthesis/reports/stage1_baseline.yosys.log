@@ -1,0 +1,2059 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69+260 (git sha1 dcd59343b, Release, GNU /usr/bin/x86_64-w64-mingw32-g++ 15.2.1)
+
+-- Running command `read_liberty -lib phase4/lib/sky130_fd_sc_hd__tt_025C_1v80.lib; read_verilog -sv stage1_baseline_axi4_to_pcie_bridge.v; hierarchy -check -top axi4_to_pcie_bridge; synth -top axi4_to_pcie_bridge -flatten; dfflibmap -liberty phase4/lib/sky130_fd_sc_hd__tt_025C_1v80.lib -dont_use sky130_fd_sc_hd__lpflow_* -dont_use sky130_fd_sc_hd__probe_p_* -dont_use sky130_fd_sc_hd__probec_p_*; abc -liberty phase4/lib/sky130_fd_sc_hd__tt_025C_1v80.lib -D 10000 -dont_use sky130_fd_sc_hd__lpflow_* -dont_use sky130_fd_sc_hd__probe_p_* -dont_use sky130_fd_sc_hd__probec_p_*; setundef -zero; hilomap -hicell sky130_fd_sc_hd__conb_1 HI -locell sky130_fd_sc_hd__conb_1 LO; opt_clean -purge; check -assert; tee -q -o phase4/reports/stage1_baseline.stat.rpt stat -liberty phase4/lib/sky130_fd_sc_hd__tt_025C_1v80.lib; write_verilog -noattr phase4/reports/stage1_baseline.netlist.v' --
+
+1. Executing Liberty frontend: phase4/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+2. Executing Verilog-2005 frontend: stage1_baseline_axi4_to_pcie_bridge.v
+Parsing SystemVerilog input from `stage1_baseline_axi4_to_pcie_bridge.v' to AST representation.
+Generating RTLIL representation for module `\axi4_to_pcie_bridge'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \axi4_to_pcie_bridge
+
+3.2. Analyzing design hierarchy..
+Top module:  \axi4_to_pcie_bridge
+Removed 0 unused modules.
+
+4. Executing SYNTH pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1.1. Analyzing design hierarchy..
+Top module:  \axi4_to_pcie_bridge
+
+4.1.2. Analyzing design hierarchy..
+Top module:  \axi4_to_pcie_bridge
+Removed 0 unused modules.
+
+4.2. Executing PROC pass (convert processes to netlists).
+
+4.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 7 switch rules as full_case in process $proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16 in module axi4_to_pcie_bridge.
+Marked 3 switch rules as full_case in process $proc$stage1_baseline_axi4_to_pcie_bridge.v:132$1 in module axi4_to_pcie_bridge.
+Removed a total of 0 dead cases.
+
+4.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 4 assignments to connections.
+
+4.2.4. Executing PROC_INIT pass (extract init attributes).
+
+4.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+
+4.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~20 debug messages>
+
+4.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+     1/32: $0\rd_size[2:0]
+     2/32: $0\rd_burst[1:0]
+     3/32: $0\rd_beats_left[7:0]
+     4/32: $0\rd_addr[31:0]
+     5/32: $0\rd_id[3:0]
+     6/32: $0\wr_last[0:0]
+     7/32: $0\wr_strb[7:0]
+     8/32: $0\wr_data[63:0]
+     9/32: $0\wr_size[2:0]
+    10/32: $0\wr_burst[1:0]
+    11/32: $0\wr_beats_left[7:0]
+    12/32: $0\wr_addr[31:0]
+    13/32: $0\wr_id[3:0]
+    14/32: $0\w_hold[0:0]
+    15/32: $0\aw_hold[0:0]
+    16/32: $0\state[3:0]
+    17/32: $0\tx_tlp_eop[0:0]
+    18/32: $0\tx_tlp_sop[0:0]
+    19/32: $0\tx_tlp_data[63:0]
+    20/32: $0\tx_tlp_tag[7:0]
+    21/32: $0\tx_tlp_length[9:0]
+    22/32: $0\tx_tlp_addr[31:0]
+    23/32: $0\tx_tlp_type[4:0]
+    24/32: $0\tx_tlp_valid[0:0]
+    25/32: $0\s_axi_rvalid[0:0]
+    26/32: $0\s_axi_rlast[0:0]
+    27/32: $0\s_axi_rresp[1:0]
+    28/32: $0\s_axi_rdata[63:0]
+    29/32: $0\s_axi_rid[3:0]
+    30/32: $0\s_axi_bvalid[0:0]
+    31/32: $0\s_axi_bresp[1:0]
+    32/32: $0\s_axi_bid[3:0]
+Creating decoders for process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:132$1'.
+     1/5: $1\rx_cpl_ready[0:0]
+     2/5: $2\s_axi_arready[0:0]
+     3/5: $1\s_axi_arready[0:0]
+     4/5: $1\s_axi_wready[0:0]
+     5/5: $1\s_axi_awready[0:0]
+
+4.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\axi4_to_pcie_bridge.\s_axi_awready' from process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:132$1'.
+No latch inferred for signal `\axi4_to_pcie_bridge.\s_axi_wready' from process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:132$1'.
+No latch inferred for signal `\axi4_to_pcie_bridge.\s_axi_arready' from process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:132$1'.
+No latch inferred for signal `\axi4_to_pcie_bridge.\rx_cpl_ready' from process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:132$1'.
+
+4.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\axi4_to_pcie_bridge.\s_axi_bid' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$623' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\s_axi_bresp' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$628' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\s_axi_bvalid' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$633' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\s_axi_rid' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$638' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\s_axi_rdata' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$643' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\s_axi_rresp' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$648' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\s_axi_rlast' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$653' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\s_axi_rvalid' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$658' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\tx_tlp_valid' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$663' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\tx_tlp_type' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$668' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\tx_tlp_addr' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$673' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\tx_tlp_length' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$678' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\tx_tlp_tag' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$683' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\tx_tlp_data' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$688' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\tx_tlp_sop' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$693' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\tx_tlp_eop' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$698' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\state' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$703' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\aw_hold' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$708' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\w_hold' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$713' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\wr_id' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$718' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\wr_addr' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$723' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\wr_beats_left' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$728' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\wr_burst' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$733' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\wr_size' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$738' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\wr_data' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$743' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\wr_strb' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$748' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\wr_last' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$753' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\rd_id' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$758' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\rd_addr' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$763' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\rd_beats_left' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$768' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\rd_burst' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$773' with positive edge clock and positive level reset.
+Creating register for signal `\axi4_to_pcie_bridge.\rd_size' using process `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+  created $adff cell `$procdff$778' with positive edge clock and positive level reset.
+
+4.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 17 empty switches in `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+Removing empty process `axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:164$16'.
+Found and cleaned up 3 empty switches in `\axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:132$1'.
+Removing empty process `axi4_to_pcie_bridge.$proc$stage1_baseline_axi4_to_pcie_bridge.v:132$1'.
+Cleaned up 20 empty switches.
+
+4.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+<suppressed ~101 debug messages>
+
+4.3. Executing CHECK pass (checking for obvious problems).
+Checking module axi4_to_pcie_bridge...
+Found and reported 0 problems.
+
+4.4. Executing FLATTEN pass (flatten design).
+
+4.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+
+4.6. Executing CHECK pass (checking for obvious problems).
+Checking module axi4_to_pcie_bridge...
+Found and reported 0 problems.
+
+4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+Removed 38 unused cells and 254 unused wires.
+<suppressed ~40 debug messages>
+
+4.8. Executing OPT pass (performing simple optimizations).
+
+4.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+
+4.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 319 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Computing hashes of 254 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+<suppressed ~195 debug messages>
+Removed a total of 65 cells.
+
+4.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi4_to_pcie_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$608.
+Removed 1 multiplexer ports.
+<suppressed ~211 debug messages>
+
+4.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi4_to_pcie_bridge.
+Performed a total of 0 changes.
+
+4.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 253 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Computing hashes of 251 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+4.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+Removed 0 unused cells and 68 unused wires.
+<suppressed ~1 debug messages>
+
+4.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+
+4.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi4_to_pcie_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~214 debug messages>
+
+4.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi4_to_pcie_bridge.
+    New ctrl vector for $pmux cell $procmux$443: { $procmux$111_CMP $auto$opt_reduce.cc:137:opt_pmux$780 $eq$stage1_baseline_axi4_to_pcie_bridge.v:138$2_Y }
+  Optimizing cells in module \axi4_to_pcie_bridge.
+Performed a total of 1 changes.
+
+4.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 252 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Removed a total of 0 cells.
+
+4.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+
+4.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+
+4.8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi4_to_pcie_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~211 debug messages>
+
+4.8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi4_to_pcie_bridge.
+Performed a total of 0 changes.
+
+4.8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 252 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Removed a total of 0 cells.
+
+4.8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+
+4.8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+
+4.8.23. Finished fast OPT passes. (There is nothing left to do.)
+
+4.9. Executing FSM pass (extract and optimize FSM).
+
+4.9.1. Executing FSM_DETECT pass (finding FSMs in design).
+Found FSM state register axi4_to_pcie_bridge.state.
+Not marking axi4_to_pcie_bridge.tx_tlp_length as FSM state register:
+    Register is connected to module port.
+    Users of register don't seem to benefit from recoding.
+Not marking axi4_to_pcie_bridge.tx_tlp_type as FSM state register:
+    Register is connected to module port.
+    Users of register don't seem to benefit from recoding.
+Not marking axi4_to_pcie_bridge.s_axi_rresp as FSM state register:
+    Register is connected to module port.
+    Users of register don't seem to benefit from recoding.
+Not marking axi4_to_pcie_bridge.s_axi_bresp as FSM state register:
+    Register is connected to module port.
+    Users of register don't seem to benefit from recoding.
+
+4.9.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+Extracting FSM `\state' from module `\axi4_to_pcie_bridge'.
+  found $adff cell for state register: $procdff$703
+  root of input selection tree: $0\state[3:0]
+  found reset state: 4'0000 (from async reset)
+  found ctrl input: $procmux$111_CMP
+  found ctrl input: $eq$stage1_baseline_axi4_to_pcie_bridge.v:155$13_Y
+  found ctrl input: $procmux$275_CMP
+  found ctrl input: $procmux$278_CMP
+  found ctrl input: $procmux$192_CMP
+  found ctrl input: $eq$stage1_baseline_axi4_to_pcie_bridge.v:138$2_Y
+  found ctrl input: $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:365$52_Y
+  found ctrl input: $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:368$55_Y
+  found state code: 4'0011
+  found ctrl input: $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:341$46_Y
+  found state code: 4'0101
+  found ctrl input: $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:298$39_Y
+  found state code: 4'0100
+  found ctrl input: $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:321$44_Y
+  found ctrl input: $eq$stage1_baseline_axi4_to_pcie_bridge.v:239$29_Y
+  found state code: 4'0010
+  found ctrl input: $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:234$21_Y
+  found ctrl input: $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:262$32_Y
+  found ctrl input: $logic_or$stage1_baseline_axi4_to_pcie_bridge.v:269$38_Y
+  found ctrl input: $logic_or$stage1_baseline_axi4_to_pcie_bridge.v:235$31_Y
+  found state code: 4'0001
+  found ctrl output: $procmux$275_CMP
+  found ctrl output: $procmux$111_CMP
+  found ctrl output: $eq$stage1_baseline_axi4_to_pcie_bridge.v:155$13_Y
+  found ctrl output: $procmux$278_CMP
+  found ctrl output: $procmux$192_CMP
+  found ctrl output: $eq$stage1_baseline_axi4_to_pcie_bridge.v:138$2_Y
+  ctrl inputs: { $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:368$55_Y $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:365$52_Y $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:341$46_Y $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:321$44_Y $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:298$39_Y $logic_or$stage1_baseline_axi4_to_pcie_bridge.v:269$38_Y $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:262$32_Y $logic_or$stage1_baseline_axi4_to_pcie_bridge.v:235$31_Y $eq$stage1_baseline_axi4_to_pcie_bridge.v:239$29_Y $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:234$21_Y }
+  ctrl outputs: { $procmux$278_CMP $procmux$275_CMP $procmux$192_CMP $procmux$111_CMP $0\state[3:0] $eq$stage1_baseline_axi4_to_pcie_bridge.v:155$13_Y $eq$stage1_baseline_axi4_to_pcie_bridge.v:138$2_Y }
+  transition:     4'0000 10'------0--0 ->     4'0000 10'0000000001
+  transition:     4'0000 10'-----01--0 ->     4'0011 10'0000001101
+  transition:     4'0000 10'-----11--0 ->     4'0101 10'0000010101
+  transition:     4'0000 10'-------0-1 ->     4'0001 10'0000000101
+  transition:     4'0000 10'-------1-1 ->     4'0010 10'0000001001
+  transition:     4'0100 10'--0------- ->     4'0100 10'0000010010
+  transition:     4'0100 10'--1------- ->     4'0101 10'0000010110
+  transition:     4'0010 10'---0------ ->     4'0010 10'1000001000
+  transition:     4'0010 10'---1------ ->     4'0000 10'1000000000
+  transition:     4'0001 10'----0----- ->     4'0001 10'0010000100
+  transition:     4'0001 10'----1---0- ->     4'0000 10'0010000000
+  transition:     4'0001 10'----1---1- ->     4'0010 10'0010001000
+  transition:     4'0101 10'-0-------- ->     4'0101 10'0001010100
+  transition:     4'0101 10'01-------- ->     4'0000 10'0001000000
+  transition:     4'0101 10'11-------- ->     4'0011 10'0001001100
+  transition:     4'0011 10'----0----- ->     4'0011 10'0100001100
+  transition:     4'0011 10'----1----- ->     4'0100 10'0100010000
+
+4.9.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\state$781' from module `\axi4_to_pcie_bridge'.
+
+4.9.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+Removed 19 unused cells and 19 unused wires.
+<suppressed ~20 debug messages>
+
+4.9.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\state$781' from module `\axi4_to_pcie_bridge'.
+  Removing unused output signal $0\state[3:0] [0].
+  Removing unused output signal $0\state[3:0] [1].
+  Removing unused output signal $0\state[3:0] [2].
+  Removing unused output signal $0\state[3:0] [3].
+
+4.9.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+Recoding FSM `$fsm$\state$781' from module `\axi4_to_pcie_bridge' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  0000 -> -----1
+  0100 -> ----1-
+  0010 -> ---1--
+  0001 -> --1---
+  0101 -> -1----
+  0011 -> 1-----
+
+4.9.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+FSM `$fsm$\state$781' from module `axi4_to_pcie_bridge':
+-------------------------------------
+
+  Information on FSM $fsm$\state$781 (\state):
+
+  Number of input signals:   10
+  Number of output signals:   6
+  Number of state bits:       6
+
+  Input signals:
+    0: $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:234$21_Y
+    1: $eq$stage1_baseline_axi4_to_pcie_bridge.v:239$29_Y
+    2: $logic_or$stage1_baseline_axi4_to_pcie_bridge.v:235$31_Y
+    3: $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:262$32_Y
+    4: $logic_or$stage1_baseline_axi4_to_pcie_bridge.v:269$38_Y
+    5: $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:298$39_Y
+    6: $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:321$44_Y
+    7: $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:341$46_Y
+    8: $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:365$52_Y
+    9: $logic_and$stage1_baseline_axi4_to_pcie_bridge.v:368$55_Y
+
+  Output signals:
+    0: $eq$stage1_baseline_axi4_to_pcie_bridge.v:138$2_Y
+    1: $eq$stage1_baseline_axi4_to_pcie_bridge.v:155$13_Y
+    2: $procmux$111_CMP
+    3: $procmux$192_CMP
+    4: $procmux$275_CMP
+    5: $procmux$278_CMP
+
+  State encoding:
+    0:   6'-----1  <RESET STATE>
+    1:   6'----1-
+    2:   6'---1--
+    3:   6'--1---
+    4:   6'-1----
+    5:   6'1-----
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 10'------0--0   ->     0 6'000001
+      1:     0 10'-------1-1   ->     2 6'000001
+      2:     0 10'-------0-1   ->     3 6'000001
+      3:     0 10'-----11--0   ->     4 6'000001
+      4:     0 10'-----01--0   ->     5 6'000001
+      5:     1 10'--0-------   ->     1 6'000010
+      6:     1 10'--1-------   ->     4 6'000010
+      7:     2 10'---1------   ->     0 6'100000
+      8:     2 10'---0------   ->     2 6'100000
+      9:     3 10'----1---0-   ->     0 6'001000
+     10:     3 10'----1---1-   ->     2 6'001000
+     11:     3 10'----0-----   ->     3 6'001000
+     12:     4 10'01--------   ->     0 6'000100
+     13:     4 10'-0--------   ->     4 6'000100
+     14:     4 10'11--------   ->     5 6'000100
+     15:     5 10'----1-----   ->     1 6'010000
+     16:     5 10'----0-----   ->     5 6'010000
+
+-------------------------------------
+
+4.9.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+Mapping FSM `$fsm$\state$781' from module `\axi4_to_pcie_bridge'.
+
+4.10. Executing OPT pass (performing simple optimizations).
+
+4.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+<suppressed ~9 debug messages>
+
+4.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 271 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Computing hashes of 270 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+4.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi4_to_pcie_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~198 debug messages>
+
+4.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi4_to_pcie_bridge.
+Performed a total of 0 changes.
+
+4.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 270 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Removed a total of 0 cells.
+
+4.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$653 ($adff) from module axi4_to_pcie_bridge (D = $0\s_axi_rlast[0:0], Q = \s_axi_rlast).
+Adding EN signal on $procdff$743 ($adff) from module axi4_to_pcie_bridge (D = \s_axi_wdata, Q = \wr_data).
+Adding EN signal on $procdff$718 ($adff) from module axi4_to_pcie_bridge (D = \s_axi_awid, Q = \wr_id).
+Adding EN signal on $procdff$723 ($adff) from module axi4_to_pcie_bridge (D = $0\wr_addr[31:0], Q = \wr_addr).
+Adding EN signal on $procdff$668 ($adff) from module axi4_to_pcie_bridge (D = $0\tx_tlp_type[4:0], Q = \tx_tlp_type).
+Adding EN signal on $procdff$708 ($adff) from module axi4_to_pcie_bridge (D = $0\aw_hold[0:0], Q = \aw_hold).
+Adding EN signal on $procdff$688 ($adff) from module axi4_to_pcie_bridge (D = $0\tx_tlp_data[63:0], Q = \tx_tlp_data).
+Adding EN signal on $procdff$698 ($adff) from module axi4_to_pcie_bridge (D = $0\tx_tlp_eop[0:0], Q = \tx_tlp_eop).
+Adding EN signal on $procdff$738 ($adff) from module axi4_to_pcie_bridge (D = \s_axi_awsize, Q = \wr_size).
+Adding EN signal on $procdff$658 ($adff) from module axi4_to_pcie_bridge (D = $0\s_axi_rvalid[0:0], Q = \s_axi_rvalid).
+Adding EN signal on $procdff$748 ($adff) from module axi4_to_pcie_bridge (D = \s_axi_wstrb, Q = \wr_strb).
+Adding EN signal on $procdff$713 ($adff) from module axi4_to_pcie_bridge (D = $0\w_hold[0:0], Q = \w_hold).
+Adding EN signal on $procdff$768 ($adff) from module axi4_to_pcie_bridge (D = $0\rd_beats_left[7:0], Q = \rd_beats_left).
+Adding EN signal on $procdff$683 ($adff) from module axi4_to_pcie_bridge (D = $0\tx_tlp_tag[7:0], Q = \tx_tlp_tag).
+Adding EN signal on $procdff$648 ($adff) from module axi4_to_pcie_bridge (D = $0\s_axi_rresp[1:0], Q = \s_axi_rresp).
+Adding EN signal on $procdff$663 ($adff) from module axi4_to_pcie_bridge (D = $0\tx_tlp_valid[0:0], Q = \tx_tlp_valid).
+Adding EN signal on $procdff$673 ($adff) from module axi4_to_pcie_bridge (D = $0\tx_tlp_addr[31:0], Q = \tx_tlp_addr).
+Adding EN signal on $procdff$773 ($adff) from module axi4_to_pcie_bridge (D = \s_axi_arburst, Q = \rd_burst).
+Adding EN signal on $procdff$623 ($adff) from module axi4_to_pcie_bridge (D = $0\s_axi_bid[3:0], Q = \s_axi_bid).
+Adding EN signal on $procdff$758 ($adff) from module axi4_to_pcie_bridge (D = \s_axi_arid, Q = \rd_id).
+Adding EN signal on $procdff$728 ($adff) from module axi4_to_pcie_bridge (D = $0\wr_beats_left[7:0], Q = \wr_beats_left).
+Adding EN signal on $procdff$628 ($adff) from module axi4_to_pcie_bridge (D = $0\s_axi_bresp[1:0], Q = \s_axi_bresp).
+Adding EN signal on $procdff$753 ($adff) from module axi4_to_pcie_bridge (D = \s_axi_wlast, Q = \wr_last).
+Adding EN signal on $procdff$643 ($adff) from module axi4_to_pcie_bridge (D = $0\s_axi_rdata[63:0], Q = \s_axi_rdata).
+Adding EN signal on $procdff$633 ($adff) from module axi4_to_pcie_bridge (D = $0\s_axi_bvalid[0:0], Q = \s_axi_bvalid).
+Adding EN signal on $procdff$678 ($adff) from module axi4_to_pcie_bridge (D = $0\tx_tlp_length[9:0], Q = \tx_tlp_length).
+Adding EN signal on $procdff$763 ($adff) from module axi4_to_pcie_bridge (D = $0\rd_addr[31:0], Q = \rd_addr).
+Adding EN signal on $procdff$638 ($adff) from module axi4_to_pcie_bridge (D = $0\s_axi_rid[3:0], Q = \s_axi_rid).
+Adding EN signal on $procdff$693 ($adff) from module axi4_to_pcie_bridge (D = $0\tx_tlp_sop[0:0], Q = \tx_tlp_sop).
+Adding EN signal on $procdff$733 ($adff) from module axi4_to_pcie_bridge (D = \s_axi_awburst, Q = \wr_burst).
+
+4.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+Removed 18 unused cells and 31 unused wires.
+<suppressed ~19 debug messages>
+
+4.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+<suppressed ~22 debug messages>
+
+4.10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi4_to_pcie_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~172 debug messages>
+
+4.10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi4_to_pcie_bridge.
+Performed a total of 0 changes.
+
+4.10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 394 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Computing hashes of 296 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Computing hashes of 279 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Computing hashes of 277 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Computing hashes of 276 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Computing hashes of 275 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+<suppressed ~357 debug messages>
+Removed a total of 119 cells.
+
+4.10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+Removed 0 unused cells and 118 unused wires.
+<suppressed ~1 debug messages>
+
+4.10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+
+4.10.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.10.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi4_to_pcie_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~175 debug messages>
+
+4.10.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi4_to_pcie_bridge.
+Performed a total of 0 changes.
+
+4.10.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 275 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Removed a total of 0 cells.
+
+4.10.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.10.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+
+4.10.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+
+4.10.23. Finished fast OPT passes. (There is nothing left to do.)
+
+4.11. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$auto$simple.cc:194:make_patterns_logic$1134 ($ne).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$auto$simple.cc:194:make_patterns_logic$1132 ($ne).
+Removed top 2 bits (of 3) from port B of cell axi4_to_pcie_bridge.$auto$simple.cc:194:make_patterns_logic$1126 ($ne).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$auto$simple.cc:194:make_patterns_logic$1119 ($ne).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$auto$simple.cc:194:make_patterns_logic$1117 ($ne).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$auto$simple.cc:194:make_patterns_logic$1115 ($ne).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$auto$simple.cc:194:make_patterns_logic$1108 ($ne).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$auto$simple.cc:194:make_patterns_logic$1106 ($ne).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$auto$simple.cc:194:make_patterns_logic$1104 ($ne).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$auto$simple.cc:194:make_patterns_logic$1088 ($ne).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$auto$simple.cc:194:make_patterns_logic$1086 ($ne).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$auto$simple.cc:194:make_patterns_logic$1075 ($ne).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$auto$simple.cc:194:make_patterns_logic$1026 ($ne).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$auto$simple.cc:194:make_patterns_logic$896 ($ne).
+Removed top 1 bits (of 3) from port B of cell axi4_to_pcie_bridge.$auto$fsm_map.cc:77:implement_pattern_cache$855 ($eq).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$auto$fsm_map.cc:77:implement_pattern_cache$833 ($eq).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$auto$fsm_map.cc:77:implement_pattern_cache$806 ($eq).
+Removed top 4 bits (of 8) from port B of cell axi4_to_pcie_bridge.$eq$stage1_baseline_axi4_to_pcie_bridge.v:156$14 ($eq).
+Removed top 7 bits (of 8) from port B of cell axi4_to_pcie_bridge.$add$stage1_baseline_axi4_to_pcie_bridge.v:218$19 ($add).
+Removed top 1 bits (of 3) from port B of cell axi4_to_pcie_bridge.$ne$stage1_baseline_axi4_to_pcie_bridge.v:235$22 ($ne).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$ne$stage1_baseline_axi4_to_pcie_bridge.v:237$24 ($ne).
+Removed top 7 bits (of 8) from port B of cell axi4_to_pcie_bridge.$add$stage1_baseline_axi4_to_pcie_bridge.v:265$33 ($add).
+Removed top 1 bits (of 3) from port B of cell axi4_to_pcie_bridge.$ne$stage1_baseline_axi4_to_pcie_bridge.v:269$34 ($ne).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$ne$stage1_baseline_axi4_to_pcie_bridge.v:271$36 ($ne).
+Removed top 7 bits (of 8) from port B of cell axi4_to_pcie_bridge.$eq$stage1_baseline_axi4_to_pcie_bridge.v:302$40 ($eq).
+Removed top 7 bits (of 8) from port B of cell axi4_to_pcie_bridge.$sub$stage1_baseline_axi4_to_pcie_bridge.v:309$41 ($sub).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$eq$stage1_baseline_axi4_to_pcie_bridge.v:310$42 ($eq).
+Removed top 28 bits (of 32) from port B of cell axi4_to_pcie_bridge.$add$stage1_baseline_axi4_to_pcie_bridge.v:311$43 ($add).
+Removed top 7 bits (of 8) from port B of cell axi4_to_pcie_bridge.$eq$stage1_baseline_axi4_to_pcie_bridge.v:351$50 ($eq).
+Removed top 7 bits (of 8) from port B of cell axi4_to_pcie_bridge.$gt$stage1_baseline_axi4_to_pcie_bridge.v:368$53 ($gt).
+Removed top 7 bits (of 8) from port B of cell axi4_to_pcie_bridge.$sub$stage1_baseline_axi4_to_pcie_bridge.v:370$56 ($sub).
+Removed top 1 bits (of 2) from port B of cell axi4_to_pcie_bridge.$eq$stage1_baseline_axi4_to_pcie_bridge.v:377$59 ($eq).
+Removed top 28 bits (of 32) from port B of cell axi4_to_pcie_bridge.$add$stage1_baseline_axi4_to_pcie_bridge.v:378$60 ($add).
+
+4.12. Executing PEEPOPT pass (run peephole optimizers).
+
+4.13. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+
+4.14. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module axi4_to_pcie_bridge:
+  creating $macc model for $add$stage1_baseline_axi4_to_pcie_bridge.v:378$60 ($add).
+  creating $macc model for $sub$stage1_baseline_axi4_to_pcie_bridge.v:370$56 ($sub).
+  creating $macc model for $add$stage1_baseline_axi4_to_pcie_bridge.v:311$43 ($add).
+  creating $macc model for $sub$stage1_baseline_axi4_to_pcie_bridge.v:309$41 ($sub).
+  creating $macc model for $add$stage1_baseline_axi4_to_pcie_bridge.v:265$33 ($add).
+  creating $macc model for $add$stage1_baseline_axi4_to_pcie_bridge.v:218$19 ($add).
+  creating $alu model for $macc $add$stage1_baseline_axi4_to_pcie_bridge.v:218$19.
+  creating $alu model for $macc $add$stage1_baseline_axi4_to_pcie_bridge.v:265$33.
+  creating $alu model for $macc $sub$stage1_baseline_axi4_to_pcie_bridge.v:309$41.
+  creating $alu model for $macc $add$stage1_baseline_axi4_to_pcie_bridge.v:311$43.
+  creating $alu model for $macc $sub$stage1_baseline_axi4_to_pcie_bridge.v:370$56.
+  creating $alu model for $macc $add$stage1_baseline_axi4_to_pcie_bridge.v:378$60.
+  creating $alu model for $gt$stage1_baseline_axi4_to_pcie_bridge.v:368$53 ($gt): merged with $sub$stage1_baseline_axi4_to_pcie_bridge.v:370$56.
+  creating $alu model for $eq$stage1_baseline_axi4_to_pcie_bridge.v:351$50 ($eq): merged with $sub$stage1_baseline_axi4_to_pcie_bridge.v:370$56.
+  creating $alu model for $eq$stage1_baseline_axi4_to_pcie_bridge.v:302$40 ($eq): merged with $sub$stage1_baseline_axi4_to_pcie_bridge.v:309$41.
+  creating $alu cell for $add$stage1_baseline_axi4_to_pcie_bridge.v:378$60: $auto$alumacc.cc:576:replace_alu$1181
+  creating $alu cell for $sub$stage1_baseline_axi4_to_pcie_bridge.v:370$56, $gt$stage1_baseline_axi4_to_pcie_bridge.v:368$53, $eq$stage1_baseline_axi4_to_pcie_bridge.v:351$50: $auto$alumacc.cc:576:replace_alu$1184
+  creating $alu cell for $add$stage1_baseline_axi4_to_pcie_bridge.v:311$43: $auto$alumacc.cc:576:replace_alu$1195
+  creating $alu cell for $sub$stage1_baseline_axi4_to_pcie_bridge.v:309$41, $eq$stage1_baseline_axi4_to_pcie_bridge.v:302$40: $auto$alumacc.cc:576:replace_alu$1198
+  creating $alu cell for $add$stage1_baseline_axi4_to_pcie_bridge.v:265$33: $auto$alumacc.cc:576:replace_alu$1203
+  creating $alu cell for $add$stage1_baseline_axi4_to_pcie_bridge.v:218$19: $auto$alumacc.cc:576:replace_alu$1206
+  created 6 $alu and 0 $macc cells.
+
+4.15. Executing SHARE pass (SAT-based resource sharing).
+
+4.16. Executing OPT pass (performing simple optimizations).
+
+4.16.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+
+4.16.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 277 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Removed a total of 0 cells.
+
+4.16.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi4_to_pcie_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~175 debug messages>
+
+4.16.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi4_to_pcie_bridge.
+Performed a total of 0 changes.
+
+4.16.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 277 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Removed a total of 0 cells.
+
+4.16.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.16.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+4.16.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+
+4.16.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.16.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi4_to_pcie_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~175 debug messages>
+
+4.16.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi4_to_pcie_bridge.
+Performed a total of 0 changes.
+
+4.16.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 277 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Removed a total of 0 cells.
+
+4.16.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.16.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+
+4.16.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+
+4.16.16. Finished fast OPT passes. (There is nothing left to do.)
+
+4.17. Executing MEMORY pass.
+
+4.17.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.17.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.17.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.17.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.17.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.17.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+
+4.17.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.17.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.17.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+
+4.17.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.18. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+
+4.19. Executing OPT pass (performing simple optimizations).
+
+4.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+<suppressed ~115 debug messages>
+
+4.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 194 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Removed a total of 0 cells.
+
+4.19.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:337:slice$886 ($adffe) from module axi4_to_pcie_bridge (D = $0\wr_addr[31:0] [2:0], Q = \wr_addr [2:0]).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$1122 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 2 on $auto$ff.cc:337:slice$1122 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 3 on $auto$ff.cc:337:slice$1122 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 4 on $auto$ff.cc:337:slice$1122 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 5 on $auto$ff.cc:337:slice$1122 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 6 on $auto$ff.cc:337:slice$1122 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 7 on $auto$ff.cc:337:slice$1122 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 8 on $auto$ff.cc:337:slice$1122 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 9 on $auto$ff.cc:337:slice$1122 ($adffe) from module axi4_to_pcie_bridge.
+
+4.19.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+Removed 0 unused cells and 83 unused wires.
+<suppressed ~1 debug messages>
+
+4.19.5. Rerunning OPT passes. (Removed registers in this run.)
+
+4.19.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+<suppressed ~1 debug messages>
+
+4.19.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 197 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Computing hashes of 196 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+4.19.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.19.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+
+4.19.10. Finished fast OPT passes.
+
+4.20. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.21. Executing OPT pass (performing simple optimizations).
+
+4.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+
+4.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 196 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Removed a total of 0 cells.
+
+4.21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi4_to_pcie_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~51 debug messages>
+
+4.21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi4_to_pcie_bridge.
+    New input vector for $reduce_and cell $auto$simple.cc:211:make_patterns_logic$1213: { $auto$simple.cc:193:make_patterns_logic$895 $auto$simple.cc:193:make_patterns_logic$1054 $auto$simple.cc:193:make_patterns_logic$1062 $auto$simple.cc:193:make_patterns_logic$1074 $auto$simple.cc:193:make_patterns_logic$1076 $auto$simple.cc:193:make_patterns_logic$1210 }
+    Consolidated identical input bits for $mux cell $procmux$374:
+      Old ports: A={ 4'0000 \s_axi_arid }, B={ 4'0000 \wr_id }, Y=$procmux$374_Y
+      New ports: A=\s_axi_arid, B=\wr_id, Y=$procmux$374_Y [3:0]
+      New connections: $procmux$374_Y [7:4] = 4'0000
+    Consolidated identical input bits for $mux cell $procmux$573:
+      Old ports: A=2'10, B=2'00, Y=$0\s_axi_bresp[1:0]
+      New ports: A=1'1, B=1'0, Y=$0\s_axi_bresp[1:0] [1]
+      New connections: $0\s_axi_bresp[1:0] [0] = 1'0
+    New ctrl vector for $pmux cell $procmux$466: \state [4]
+    Consolidated identical input bits for $mux cell $procmux$104:
+      Old ports: A=\rd_addr, B={ $add$stage1_baseline_axi4_to_pcie_bridge.v:373$58_Y [31:3] \rd_addr [2:0] }, Y=$procmux$104_Y
+      New ports: A=\rd_addr [31:3], B=$add$stage1_baseline_axi4_to_pcie_bridge.v:373$58_Y [31:3], Y=$procmux$104_Y [31:3]
+      New connections: $procmux$104_Y [2:0] = \rd_addr [2:0]
+    Consolidated identical input bits for $mux cell $ternary$stage1_baseline_axi4_to_pcie_bridge.v:344$48:
+      Old ports: A=2'10, B=2'00, Y=$ternary$stage1_baseline_axi4_to_pcie_bridge.v:344$48_Y
+      New ports: A=1'1, B=1'0, Y=$ternary$stage1_baseline_axi4_to_pcie_bridge.v:344$48_Y [1]
+      New connections: $ternary$stage1_baseline_axi4_to_pcie_bridge.v:344$48_Y [0] = 1'0
+    Consolidated identical input bits for $mux cell $procmux$434:
+      Old ports: A=5'00001, B=5'00000, Y=$procmux$434_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$434_Y [0]
+      New connections: $procmux$434_Y [4:1] = 4'0000
+  Optimizing cells in module \axi4_to_pcie_bridge.
+    Consolidated identical input bits for $mux cell $procmux$363:
+      Old ports: A=$procmux$374_Y, B={ 4'0000 \rd_id }, Y=$0\tx_tlp_tag[7:0]
+      New ports: A=$procmux$374_Y [3:0], B=\rd_id, Y=$0\tx_tlp_tag[7:0] [3:0]
+      New connections: $0\tx_tlp_tag[7:0] [7:4] = 4'0000
+    Consolidated identical input bits for $mux cell $procmux$497:
+      Old ports: A=$ternary$stage1_baseline_axi4_to_pcie_bridge.v:344$48_Y, B=2'10, Y=$procmux$497_Y
+      New ports: A=$ternary$stage1_baseline_axi4_to_pcie_bridge.v:344$48_Y [1], B=1'1, Y=$procmux$497_Y [1]
+      New connections: $procmux$497_Y [0] = 1'0
+    Consolidated identical input bits for $mux cell $procmux$423:
+      Old ports: A=$procmux$434_Y, B=5'00001, Y=$0\tx_tlp_type[4:0]
+      New ports: A=$procmux$434_Y [0], B=1'1, Y=$0\tx_tlp_type[4:0] [0]
+      New connections: $0\tx_tlp_type[4:0] [4:1] = 4'0000
+  Optimizing cells in module \axi4_to_pcie_bridge.
+    Consolidated identical input bits for $mux cell $procmux$501:
+      Old ports: A=2'10, B=$procmux$497_Y, Y=$0\s_axi_rresp[1:0]
+      New ports: A=1'1, B=$procmux$497_Y [1], Y=$0\s_axi_rresp[1:0] [1]
+      New connections: $0\s_axi_rresp[1:0] [0] = 1'0
+  Optimizing cells in module \axi4_to_pcie_bridge.
+Performed a total of 11 changes.
+
+4.21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 196 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Removed a total of 0 cells.
+
+4.21.6. Executing OPT_SHARE pass.
+
+4.21.7. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $auto$ff.cc:337:slice$1137 ($adffe) from module axi4_to_pcie_bridge (D = $0\rd_addr[31:0] [2:0], Q = \rd_addr [2:0]).
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$1009 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 4 on $auto$ff.cc:337:slice$994 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 5 on $auto$ff.cc:337:slice$994 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 6 on $auto$ff.cc:337:slice$994 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 7 on $auto$ff.cc:337:slice$994 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 0 on $auto$ff.cc:337:slice$1082 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 1 on $auto$ff.cc:337:slice$899 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 2 on $auto$ff.cc:337:slice$899 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 3 on $auto$ff.cc:337:slice$899 ($adffe) from module axi4_to_pcie_bridge.
+Setting constant 0-bit at position 4 on $auto$ff.cc:337:slice$899 ($adffe) from module axi4_to_pcie_bridge.
+
+4.21.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+
+4.21.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+<suppressed ~8 debug messages>
+
+4.21.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.21.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi4_to_pcie_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~42 debug messages>
+
+4.21.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi4_to_pcie_bridge.
+    New input vector for $reduce_and cell $auto$simple.cc:211:make_patterns_logic$1220: { $auto$simple.cc:193:make_patterns_logic$1003 $auto$simple.cc:193:make_patterns_logic$1005 $auto$simple.cc:193:make_patterns_logic$1012 $auto$simple.cc:193:make_patterns_logic$1014 $auto$simple.cc:193:make_patterns_logic$1034 $auto$simple.cc:193:make_patterns_logic$1217 }
+  Optimizing cells in module \axi4_to_pcie_bridge.
+Performed a total of 1 changes.
+
+4.21.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 199 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Computing hashes of 196 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+4.21.14. Executing OPT_SHARE pass.
+
+4.21.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.21.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+4.21.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+
+4.21.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.21.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi4_to_pcie_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~42 debug messages>
+
+4.21.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi4_to_pcie_bridge.
+Performed a total of 0 changes.
+
+4.21.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 196 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Removed a total of 0 cells.
+
+4.21.22. Executing OPT_SHARE pass.
+
+4.21.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.21.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+
+4.21.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+
+4.21.26. Finished fast OPT passes. (There is nothing left to do.)
+
+4.22. Executing TECHMAP pass (map to technology primitives).
+
+4.22.1. Executing Verilog-2005 frontend: C:\Users\prana\AppData\Local\Temp\claude\C--Users-prana-OneDrive-persona-final\8cf320a2-9f54-4952-9d9d-92312078e288\scratchpad\osscad\oss-cad-suite\bin\../share/yosys/techmap.v
+Parsing Verilog input from `C:\Users\prana\AppData\Local\Temp\claude\C--Users-prana-OneDrive-persona-final\8cf320a2-9f54-4952-9d9d-92312078e288\scratchpad\osscad\oss-cad-suite\bin\../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+4.22.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod$c3cd1564c35d873179656addd6052d7ea8b6d991\_90_alu for cells of type $alu.
+Using template $paramod$403a3c2fa431a154c52a6a5429d7a6260b5d144f\_90_alu for cells of type $alu.
+Using template $paramod$80fd49bc875a8a1ceaa5f1b164eef265e92f0909\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $pmux.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001000 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000011101 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000011101 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~977 debug messages>
+
+4.23. Executing OPT pass (performing simple optimizations).
+
+4.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+<suppressed ~868 debug messages>
+
+4.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 1374 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Computing hashes of 1320 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Computing hashes of 1309 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+<suppressed ~195 debug messages>
+Removed a total of 65 cells.
+
+4.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+Removed 86 unused cells and 604 unused wires.
+<suppressed ~87 debug messages>
+
+4.23.5. Finished fast OPT passes.
+
+4.24. Executing ABC pass (technology mapping using ABC).
+
+4.24.1. Summary of detected clock domains:
+  9 cells in clk=\clk, en=$auto$simple.cc:210:make_patterns_logic$921, arst=!\rst_n, srst={ }
+  20 cells in clk=\clk, en=$auto$simple.cc:210:make_patterns_logic$1120, arst=!\rst_n, srst={ }
+  10 cells in clk=\clk, en=$auto$simple.cc:210:make_patterns_logic$969, arst=!\rst_n, srst={ }
+  9 cells in clk=\clk, en=$auto$simple.cc:210:make_patterns_logic$979, arst=!\rst_n, srst={ }
+  9 cells in clk=\clk, en=$auto$simple.cc:210:make_patterns_logic$1031, arst=!\rst_n, srst={ }
+  16 cells in clk=\clk, en=$auto$simple.cc:210:make_patterns_logic$1219, arst=!\rst_n, srst={ }
+  167 cells in clk=\clk, en=$auto$simple.cc:210:make_patterns_logic$897, arst=!\rst_n, srst={ }
+  11 cells in clk=\clk, en=$auto$simple.cc:210:make_patterns_logic$1212, arst=!\rst_n, srst={ }
+  150 cells in clk=\clk, en=$auto$simple.cc:210:make_patterns_logic$1020, arst=!\rst_n, srst={ }
+  67 cells in clk=\clk, en=$auto$simple.cc:210:make_patterns_logic$1080, arst=!\rst_n, srst={ }
+  11 cells in clk=\clk, en=$auto$simple.cc:210:make_patterns_logic$1064, arst=!\rst_n, srst={ }
+  15 cells in clk=\clk, en=$auto$simple.cc:210:make_patterns_logic$1051, arst=!\rst_n, srst={ }
+  231 cells in clk=\clk, en=$auto$simple.cc:210:make_patterns_logic$1148, arst=!\rst_n, srst={ }
+  208 cells in clk=\clk, en=$auto$simple.cc:210:make_patterns_logic$1007, arst=!\rst_n, srst={ }
+  21 cells in clk=\clk, en=$auto$simple.cc:210:make_patterns_logic$1179, arst=!\rst_n, srst={ }
+  153 cells in clk=\clk, en=$auto$simple.cc:210:make_patterns_logic$1096, arst=!\rst_n, srst={ }
+  116 cells in clk=\clk, en={ }, arst=!\rst_n, srst={ }
+
+4.24.2. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:210:make_patterns_logic$921, asynchronously reset by !\rst_n
+
+4.24.3. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:210:make_patterns_logic$1120, asynchronously reset by !\rst_n
+
+4.24.4. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:210:make_patterns_logic$969, asynchronously reset by !\rst_n
+
+4.24.5. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:210:make_patterns_logic$979, asynchronously reset by !\rst_n
+
+4.24.6. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:210:make_patterns_logic$1031, asynchronously reset by !\rst_n
+
+4.24.7. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:210:make_patterns_logic$1219, asynchronously reset by !\rst_n
+Replacing 3 occurrences of constant undef bits with constant zero bits
+
+4.24.8. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:210:make_patterns_logic$897, asynchronously reset by !\rst_n
+
+4.24.9. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:210:make_patterns_logic$1212, asynchronously reset by !\rst_n
+Replacing 3 occurrences of constant undef bits with constant zero bits
+
+4.24.10. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:210:make_patterns_logic$1020, asynchronously reset by !\rst_n
+
+4.24.11. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:210:make_patterns_logic$1080, asynchronously reset by !\rst_n
+
+4.24.12. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:210:make_patterns_logic$1064, asynchronously reset by !\rst_n
+
+4.24.13. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:210:make_patterns_logic$1051, asynchronously reset by !\rst_n
+
+4.24.14. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:210:make_patterns_logic$1148, asynchronously reset by !\rst_n
+
+4.24.15. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:210:make_patterns_logic$1007, asynchronously reset by !\rst_n
+
+4.24.16. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:210:make_patterns_logic$1179, asynchronously reset by !\rst_n
+
+4.24.17. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$simple.cc:210:make_patterns_logic$1096, asynchronously reset by !\rst_n
+
+4.24.18. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by !\rst_n
+
+4.24.18.1. Executed ABC.
+Extracted 8 gates and 17 wires to a netlist network with 8 inputs and 5 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        4
+ABC RESULTS:            ANDNOT cells:        1
+ABC RESULTS:              NAND cells:        1
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:        internal signals:        4
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        5
+Removing temp directory.
+
+4.24.18.1. Executed ABC.
+Extracted 19 gates and 41 wires to a netlist network with 22 inputs and 5 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        8
+ABC RESULTS:            ANDNOT cells:        1
+ABC RESULTS:              NAND cells:        5
+ABC RESULTS:               NOR cells:        5
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:        internal signals:       14
+ABC RESULTS:           input signals:       22
+ABC RESULTS:          output signals:        5
+Removing temp directory.
+
+4.24.18.1. Executed ABC.
+Extracted 9 gates and 20 wires to a netlist network with 11 inputs and 4 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        6
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:        internal signals:        5
+ABC RESULTS:           input signals:       11
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+
+4.24.18.1. Executed ABC.
+Extracted 8 gates and 18 wires to a netlist network with 9 inputs and 5 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        4
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:        internal signals:        4
+ABC RESULTS:           input signals:        9
+ABC RESULTS:          output signals:        5
+Removing temp directory.
+
+4.24.18.1. Executed ABC.
+Extracted 8 gates and 18 wires to a netlist network with 9 inputs and 4 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        4
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:             ORNOT cells:        2
+ABC RESULTS:        internal signals:        5
+ABC RESULTS:           input signals:        9
+ABC RESULTS:          output signals:        4
+Removing temp directory.
+
+4.24.18.1. Executed ABC.
+Extracted 13 gates and 31 wires to a netlist network with 17 inputs and 10 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        5
+ABC RESULTS:            ANDNOT cells:        3
+ABC RESULTS:               MUX cells:        3
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:        internal signals:        4
+ABC RESULTS:           input signals:       17
+ABC RESULTS:          output signals:       10
+Removing temp directory.
+
+4.24.18.1. Executed ABC.
+Extracted 138 gates and 230 wires to a netlist network with 92 inputs and 60 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       27
+ABC RESULTS:               MUX cells:       58
+ABC RESULTS:              NAND cells:        1
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:              XNOR cells:        1
+ABC RESULTS:               XOR cells:       27
+ABC RESULTS:        internal signals:       78
+ABC RESULTS:           input signals:       92
+ABC RESULTS:          output signals:       60
+Removing temp directory.
+
+4.24.18.1. Executed ABC.
+Extracted 8 gates and 23 wires to a netlist network with 14 inputs and 7 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        2
+ABC RESULTS:            ANDNOT cells:        3
+ABC RESULTS:               MUX cells:        3
+ABC RESULTS:        internal signals:        2
+ABC RESULTS:           input signals:       14
+ABC RESULTS:          output signals:        7
+Removing temp directory.
+
+4.24.18.1. Executed ABC.
+Extracted 80 gates and 166 wires to a netlist network with 84 inputs and 76 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       71
+ABC RESULTS:            ANDNOT cells:        2
+ABC RESULTS:               MUX cells:        3
+ABC RESULTS:              NAND cells:        1
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:              XNOR cells:        1
+ABC RESULTS:        internal signals:        6
+ABC RESULTS:           input signals:       84
+ABC RESULTS:          output signals:       76
+Removing temp directory.
+
+4.24.18.1. Executed ABC.
+Extracted 59 gates and 83 wires to a netlist network with 24 inputs and 16 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        7
+ABC RESULTS:            ANDNOT cells:        4
+ABC RESULTS:               MUX cells:        8
+ABC RESULTS:              NAND cells:        5
+ABC RESULTS:               NOR cells:        2
+ABC RESULTS:               NOT cells:        7
+ABC RESULTS:                OR cells:        3
+ABC RESULTS:              XNOR cells:        8
+ABC RESULTS:               XOR cells:        6
+ABC RESULTS:        internal signals:       43
+ABC RESULTS:           input signals:       24
+ABC RESULTS:          output signals:       16
+Removing temp directory.
+
+4.24.18.1. Executed ABC.
+Extracted 6 gates and 12 wires to a netlist network with 6 inputs and 3 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        3
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:        internal signals:        3
+ABC RESULTS:           input signals:        6
+ABC RESULTS:          output signals:        3
+Removing temp directory.
+
+4.24.18.1. Executed ABC.
+Extracted 9 gates and 24 wires to a netlist network with 15 inputs and 8 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        2
+ABC RESULTS:               MUX cells:        1
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:               XOR cells:        4
+ABC RESULTS:        internal signals:        1
+ABC RESULTS:           input signals:       15
+ABC RESULTS:          output signals:        8
+Removing temp directory.
+
+4.24.18.1. Executed ABC.
+Extracted 194 gates and 275 wires to a netlist network with 81 inputs and 78 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       40
+ABC RESULTS:            ANDNOT cells:        7
+ABC RESULTS:               MUX cells:       37
+ABC RESULTS:              NAND cells:        9
+ABC RESULTS:               NOR cells:        3
+ABC RESULTS:               NOT cells:        7
+ABC RESULTS:                OR cells:        5
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:              XNOR cells:       16
+ABC RESULTS:               XOR cells:       26
+ABC RESULTS:        internal signals:      116
+ABC RESULTS:           input signals:       81
+ABC RESULTS:          output signals:       78
+Removing temp directory.
+
+4.24.18.1. Executed ABC.
+Extracted 106 gates and 247 wires to a netlist network with 140 inputs and 99 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        5
+ABC RESULTS:            ANDNOT cells:       64
+ABC RESULTS:               MUX cells:       33
+ABC RESULTS:                OR cells:        3
+ABC RESULTS:        internal signals:        8
+ABC RESULTS:           input signals:      140
+ABC RESULTS:          output signals:       99
+Removing temp directory.
+
+4.24.18.1. Executed ABC.
+Extracted 12 gates and 28 wires to a netlist network with 16 inputs and 8 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:            ANDNOT cells:        1
+ABC RESULTS:               MUX cells:        4
+ABC RESULTS:              NAND cells:        1
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:        internal signals:        4
+ABC RESULTS:           input signals:       16
+ABC RESULTS:          output signals:        8
+Removing temp directory.
+
+4.24.18.1. Executed ABC.
+Extracted 80 gates and 164 wires to a netlist network with 83 inputs and 77 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       71
+ABC RESULTS:               NOT cells:        8
+ABC RESULTS:               XOR cells:        1
+ABC RESULTS:        internal signals:        4
+ABC RESULTS:           input signals:       83
+ABC RESULTS:          output signals:       77
+Removing temp directory.
+
+4.24.18.1. Executed ABC.
+Extracted 110 gates and 149 wires to a netlist network with 39 inputs and 31 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.24.18.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       18
+ABC RESULTS:            ANDNOT cells:        4
+ABC RESULTS:              NAND cells:       19
+ABC RESULTS:               NOR cells:        5
+ABC RESULTS:               NOT cells:        8
+ABC RESULTS:                OR cells:       14
+ABC RESULTS:             ORNOT cells:        6
+ABC RESULTS:        internal signals:       79
+ABC RESULTS:           input signals:       39
+ABC RESULTS:          output signals:       31
+Removing temp directory.
+Removing global temp directory.
+
+4.25. Executing OPT pass (performing simple optimizations).
+
+4.25.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi4_to_pcie_bridge.
+
+4.25.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi4_to_pcie_bridge'.
+Computing hashes of 1109 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+Computing hashes of 1106 cells of `\axi4_to_pcie_bridge'.
+Finding duplicate cells in `\axi4_to_pcie_bridge'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+4.25.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.25.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+Removed 0 unused cells and 1226 unused wires.
+<suppressed ~1 debug messages>
+
+4.25.5. Finished fast OPT passes.
+
+4.26. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `axi4_to_pcie_bridge'. Setting top module to axi4_to_pcie_bridge.
+
+4.26.1. Analyzing design hierarchy..
+Top module:  \axi4_to_pcie_bridge
+
+4.26.2. Analyzing design hierarchy..
+Top module:  \axi4_to_pcie_bridge
+Removed 0 unused modules.
+
+4.27. Printing statistics.
+
+=== axi4_to_pcie_bridge ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      558 wires
+     1403 wire bits
+       61 public wires
+      636 public wire bits
+       46 ports
+      460 port bits
+     1106 cells
+       90   $_ANDNOT_
+      275   $_AND_
+      346   $_DFFE_PN0P_
+        4   $_DFFE_PN1P_
+        5   $_DFF_PN0_
+        1   $_DFF_PN1_
+      150   $_MUX_
+       42   $_NAND_
+       17   $_NOR_
+       36   $_NOT_
+       13   $_ORNOT_
+       37   $_OR_
+       26   $_XNOR_
+       64   $_XOR_
+
+4.28. Executing CHECK pass (checking for obvious problems).
+Checking module axi4_to_pcie_bridge...
+Found and reported 0 problems.
+
+5. Executing DFFLIBMAP pass (mapping DFF/DLATCH cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_1 (noninv, pins=3, area=20.02) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtn_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_NN0_.
+  cell sky130_fd_sc_hd__dfrtp_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_1 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__edfxtp_1 (noninv, pins=4, area=30.03) is a direct match for cell type $_DFFE_PP_.
+  cell sky130_fd_sc_hd__dfbbn_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_NNN_.
+  cell sky130_fd_sc_hd__dfbbp_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_PNN_.
+  cell sky130_fd_sc_hd__dlxtn_1 (noninv, pins=3, area=15.01) is a direct match for cell type $_DLATCH_N_.
+  cell sky130_fd_sc_hd__dlxtp_1 (noninv, pins=3, area=15.01) is a direct match for cell type $_DLATCH_P_.
+  cell sky130_fd_sc_hd__dlrtn_1 (noninv, pins=4, area=17.52) is a direct match for cell type $_DLATCH_NN0_.
+  cell sky130_fd_sc_hd__dlrtp_1 (noninv, pins=4, area=16.27) is a direct match for cell type $_DLATCH_PN0_.
+  final dff/dlatch cell mappings:
+    unmapped dff/dlatch cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    \sky130_fd_sc_hd__dfrtn_1 _DFF_NN0_ (.CLK_N( C), .D( D), .Q( Q), .RESET_B( R));
+    unmapped dff/dlatch cell: $_DFF_NN1_
+    unmapped dff/dlatch cell: $_DFF_NP0_
+    unmapped dff/dlatch cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_1 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff/dlatch cell: $_DFF_PP0_
+    unmapped dff/dlatch cell: $_DFF_PP1_
+    unmapped dff/dlatch cell: $_DFFE_NN_
+    unmapped dff/dlatch cell: $_DFFE_NP_
+    unmapped dff/dlatch cell: $_DFFE_PN_
+    \sky130_fd_sc_hd__edfxtp_1 _DFFE_PP_ (.CLK( C), .D( D), .DE( E), .Q( Q));
+    \sky130_fd_sc_hd__dfbbn_1 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff/dlatch cell: $_DFFSR_NNP_
+    unmapped dff/dlatch cell: $_DFFSR_NPN_
+    unmapped dff/dlatch cell: $_DFFSR_NPP_
+    \sky130_fd_sc_hd__dfbbp_1 _DFFSR_PNN_ (.CLK( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff/dlatch cell: $_DFFSR_PNP_
+    unmapped dff/dlatch cell: $_DFFSR_PPN_
+    unmapped dff/dlatch cell: $_DFFSR_PPP_
+    \sky130_fd_sc_hd__dlxtn_1 _DLATCH_N_ (.D( D), .GATE_N( E), .Q( Q));
+    \sky130_fd_sc_hd__dlxtp_1 _DLATCH_P_ (.D( D), .GATE( E), .Q( Q));
+    \sky130_fd_sc_hd__dlrtn_1 _DLATCH_NN0_ (.D( D), .GATE_N( E), .Q( Q), .RESET_B( R));
+    unmapped dff/dlatch cell: $_DLATCH_NN1_
+    unmapped dff/dlatch cell: $_DLATCH_NP0_
+    unmapped dff/dlatch cell: $_DLATCH_NP1_
+    \sky130_fd_sc_hd__dlrtp_1 _DLATCH_PN0_ (.D( D), .GATE( E), .Q( Q), .RESET_B( R));
+    unmapped dff/dlatch cell: $_DLATCH_PN1_
+    unmapped dff/dlatch cell: $_DLATCH_PP0_
+    unmapped dff/dlatch cell: $_DLATCH_PP1_
+    unmapped dff/dlatch cell: $_DLATCHSR_NNN_
+    unmapped dff/dlatch cell: $_DLATCHSR_NNP_
+    unmapped dff/dlatch cell: $_DLATCHSR_NPN_
+    unmapped dff/dlatch cell: $_DLATCHSR_NPP_
+    unmapped dff/dlatch cell: $_DLATCHSR_PNN_
+    unmapped dff/dlatch cell: $_DLATCHSR_PNP_
+    unmapped dff/dlatch cell: $_DLATCHSR_PPN_
+    unmapped dff/dlatch cell: $_DLATCHSR_PPP_
+
+5.1. Executing DFFLEGALIZE pass (convert FFs and LATCHes to types supported by the target).
+<suppressed ~24 debug messages>
+Mapping DFF/DLATCH cells in module `\axi4_to_pcie_bridge':
+  mapped 351 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
+  mapped 5 $_DFF_PN1_ cells to \sky130_fd_sc_hd__dfstp_1 cells.
+
+6. Executing ABC pass (technology mapping using ABC).
+
+6.1. Summary of detected clock domains:
+  1456 cells in clk={ }, en={ }, arst={ }, srst={ }
+
+6.2. Extracting gate netlist of module `\axi4_to_pcie_bridge' to `<abc-temp-dir>/input.blif'..
+Warning: ABC: merged SCL conversion failed, falling back to liberty format
+ABC: conversion output:
+'C:\Users\prana\AppData\Local\Temp\claude\C--Users-prana-OneDrive-persona-final\8cf320a2-9f54-4952-9d9d-92312078e288\scratchpad\osscad\oss-cad-suite\bin\yosys-abc" -c "read_lib' is not recognized as an internal or external command,
+
+operable program or batch file.
+
+Warning: ABC: Merged scl conversion failed, using liberty format
+No matching clock domain found. Not extracting any FF cells.
+
+6.2.1. Executed ABC.
+Extracted 1100 gates and 1710 wires to a netlist network with 609 inputs and 360 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -X sky130_fd_sc_hd__lpflow_* -X sky130_fd_sc_hd__probe_p_* -X sky130_fd_sc_hd__probec_p_* -w C:\Users\prana\OneDrive\persona\final/phase4/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.05 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__diode_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_0".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_bleeder_1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_clkbufkapwr_1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_clkbufkapwr_16" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_clkbufkapwr_2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_clkbufkapwr_4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_clkbufkapwr_8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_clkinvkapwr_1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_clkinvkapwr_16" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_clkinvkapwr_2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_clkinvkapwr_4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_clkinvkapwr_8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_12" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_3" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_6" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_inputiso0n_1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_inputiso0p_1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_inputiso1n_1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_inputiso1p_1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__lpflow_inputisolatch_1".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_isobufsrc_1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_isobufsrc_16" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_isobufsrc_2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_isobufsrc_4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_isobufsrc_8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_isobufsrckapwr_16" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__probe_p_8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__probec_p_8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "C:\Users\prana\OneDrive\persona\final/phase4/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 305 cells (123 skipped: 63 seq; 13 tri-state; 12 no func; 35 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.20 sec
+ABC: Memory =   16.01 MB. Time =     0.20 sec
+ABC: Warning: Detected 9 multi-output cells (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + retime -o -D 10000 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf -D 10000 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+6.2.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a2111oi_0 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a211o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21o_1 cells:       13
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:      126
+ABC RESULTS:   sky130_fd_sc_hd__a22o_1 cells:      130
+ABC RESULTS:   sky130_fd_sc_hd__a22oi_1 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_1 cells:       34
+ABC RESULTS:   sky130_fd_sc_hd__a32o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a41oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2_0 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__and3_1 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__and4_1 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:       35
+ABC RESULTS:   sky130_fd_sc_hd__mux2_1 cells:       90
+ABC RESULTS:   sky130_fd_sc_hd__mux2i_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:      127
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_1 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__nand3_1 cells:       15
+ABC RESULTS:   sky130_fd_sc_hd__nand3b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__nand4b_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:      109
+ABC RESULTS:   sky130_fd_sc_hd__nor2b_1 cells:       15
+ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:       26
+ABC RESULTS:   sky130_fd_sc_hd__nor4_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o21a_1 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:       89
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_1 cells:       16
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o22a_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__o22ai_1 cells:       20
+ABC RESULTS:   sky130_fd_sc_hd__o311ai_0 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o31a_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or2_0 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__or3_1 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__or4_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_1 cells:       13
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:        9
+ABC RESULTS:        internal signals:      741
+ABC RESULTS:           input signals:      609
+ABC RESULTS:          output signals:      360
+Removing temp directory.
+Removing global temp directory.
+
+7. Executing SETUNDEF pass (replace undef values with defined constants).
+
+8. Executing HILOMAP pass (mapping to constant drivers).
+
+9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi4_to_pcie_bridge..
+Removed 10 unused cells and 1489 unused wires.
+<suppressed ~11 debug messages>
+
+10. Executing CHECK pass (checking for obvious problems).
+Checking module axi4_to_pcie_bridge...
+Found and reported 0 problems.
+12. Executing Verilog backend.
+
+12.1. Executing BMUXMAP pass.
+
+12.2. Executing DEMUXMAP pass.
+Dumping module `\axi4_to_pcie_bridge'.
+
+Warnings: 2 unique messages, 2 total
+End of script. Logfile hash: 3b7ce94825
+Yosys 0.69+260 (git sha1 dcd59343b, Release, GNU /usr/bin/x86_64-w64-mingw32-g++ 15.2.1)
+Time spent: 1% 25x opt_expr (0 sec), 1% 24x opt_clean (0 sec), ...

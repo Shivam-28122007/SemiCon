@@ -1,0 +1,76 @@
+﻿==============================================================
+SARCathon Phase 2 AXI4-to-PCIe Bridge Self-Checking Testbench
+==============================================================
+PASS | reset releases with no TX packet
+PASS | reset releases with no B response
+PASS | reset releases with no R response
+PASS | write burst emits TLP
+PASS | write TLP type is MemWr
+PASS | write TLP address matches
+PASS | three beats coalesced into one TLP
+PASS | coalesced write payload matches
+PASS | TX VALID held under backpressure
+PASS | TX payload stable under backpressure
+PASS | TX VALID held under backpressure
+PASS | TX payload stable under backpressure
+PASS | TX VALID held under backpressure
+PASS | TX payload stable under backpressure
+PASS | write response arrives
+PASS | write response ID matches
+PASS | write response code matches
+PASS | partial WSTRB returns B response
+PASS | partial WSTRB returns SLVERR
+PASS | invalid write does not issue TLP
+PASS | W-before-AW data is buffered
+PASS | buffered W data reaches coalesced packet
+PASS | write response arrives
+PASS | write response ID matches
+PASS | write response code matches
+PASS | first read request emits TLP
+PASS | first read burst length is two
+PASS | first read address matches
+PASS | second read request emits TLP
+PASS | second read address matches
+PASS | outstanding reads use distinct tags
+PASS | unknown completion tag is rejected
+PASS | read beat becomes valid
+PASS | read ID matches expected
+PASS | read data matches expected
+PASS | read response matches expected
+PASS | RLAST matches expected
+PASS | read beat becomes valid
+PASS | read ID matches expected
+PASS | read data matches expected
+PASS | read response matches expected
+PASS | RLAST matches expected
+PASS | read beat becomes valid
+PASS | read ID matches expected
+PASS | read data matches expected
+PASS | read response matches expected
+PASS | RLAST matches expected
+PASS | read beat becomes valid
+PASS | read ID matches expected
+PASS | read data matches expected
+PASS | read response matches expected
+PASS | RLAST matches expected
+PASS | malformed read emits no PCIe request
+PASS | R channel becomes valid for backpressure test
+PASS | R VALID held while RREADY low
+PASS | R payload stable while stalled
+PASS | R VALID held while RREADY low
+PASS | R payload stable while stalled
+PASS | R VALID held while RREADY low
+PASS | R payload stable while stalled
+PASS | error-status read request emits TLP
+PASS | read beat becomes valid
+PASS | read ID matches expected
+PASS | read data matches expected
+PASS | read response matches expected
+PASS | RLAST matches expected
+--------------------------------------------------------------
+TEST SUMMARY: total=66 passed=66 failed=0
+RESULT: ALL TESTS PASSED
+NOTE: Simulation is only a functional regression; it is not formal
+verification, PCIe compliance validation, or physical sign-off.
+==============================================================
+tb_phase2_directed_axi_pcie_bridge.v:365: $finish called at 1340000 (1ps)

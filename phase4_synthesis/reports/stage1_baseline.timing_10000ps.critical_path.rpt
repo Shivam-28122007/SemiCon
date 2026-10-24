@@ -1,0 +1,21 @@
+# stage1_baseline: ABC timing at 10.0 ns target (typical corner, no wire load)
+unbuffered delay : 6517 ps
+after buffer/size: 3002 ps
+
+unbuffered: start=pi34 (\wr_beats_left [1]) end=po9 ($auto$rtlil.cc:3492:MuxGate$4736)
+after buffer/size: start=pi61 (\rd_burst [1]) end=po25 ($auto$rtlil.cc:3492:MuxGate$4704)
+
+   0  pi                     fanout=3    arrival=0 ps
+   1  nand4b_1               fanout=3    arrival=176 ps
+   2  nor4_1                 fanout=6    arrival=626 ps
+   3  nand4_1                fanout=5    arrival=876 ps
+   4  nor4_1                 fanout=5    arrival=1283 ps
+   5  nand4_1                fanout=3    arrival=1475 ps
+   6  nor4_1                 fanout=4    arrival=1775 ps
+   7  and3_1                 fanout=6    arrival=2047 ps
+   8  and4_1                 fanout=4    arrival=2298 ps
+   9  and3_1                 fanout=1    arrival=2454 ps
+  10  clkbuf_1               fanout=7    arrival=2628 ps
+  11  and3_1                 fanout=1    arrival=2795 ps
+  12  o21ai_0                fanout=2    arrival=2877 ps
+  13  a31oi_1                fanout=1    arrival=3002 ps

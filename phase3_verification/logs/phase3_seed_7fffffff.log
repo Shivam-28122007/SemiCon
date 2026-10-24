@@ -1,0 +1,774 @@
+﻿==============================================================
+SARCathon Phase 3 Functional Verification Regression
+seed=0x7fffffff; deterministic constrained-random; DATA_WIDTH=32; MAX_BEATS=4; TAG_COUNT=4; W_FIFO_DEPTH=8
+==============================================================
+PASS | reset clears TX VALID
+PASS | reset clears B VALID
+PASS | reset clears R VALID
+PASS | TX packet appears before timeout
+PASS | write burst coalesced into one TLP
+PASS | write TLP address correct
+PASS | write packet payload correct
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | malformed write did not leave TX packet
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | early WLAST burst rejected without TLP
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | FIXED burst read is rejected locally
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | oversized write burst emits no TLP
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | 4-KiB-crossing write rejected without TLP
+PASS | ARREADY backpressures when all completion tags are allocated
+PASS | TX packet appears before timeout
+PASS | read request is MemRd
+PASS | read TLP length matches AXI burst
+PASS | read TLP address matches request
+PASS | TX packet appears before timeout
+PASS | read request is MemRd
+PASS | read TLP length matches AXI burst
+PASS | read TLP address matches request
+PASS | allocated read tags are unique
+PASS | TX packet appears before timeout
+PASS | read request is MemRd
+PASS | read TLP length matches AXI burst
+PASS | read TLP address matches request
+PASS | allocated read tags are unique
+PASS | allocated read tags are unique
+PASS | TX packet appears before timeout
+PASS | read request is MemRd
+PASS | read TLP length matches AXI burst
+PASS | read TLP address matches request
+PASS | allocated read tags are unique
+PASS | allocated read tags are unique
+PASS | allocated read tags are unique
+PASS | unknown completion tag is rejected
+PASS | completion tag becomes acceptable
+PASS | completion tag becomes acceptable
+PASS | completion tag becomes acceptable
+PASS | completion tag becomes acceptable
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | malformed read generated no TX request
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | misaligned read rejected without TLP
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | 4-KiB-crossing read rejected without TLP
+PASS | TX packet appears before timeout
+PASS | completion tag becomes acceptable
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | duplicate/stale completion rejected after retirement
+PASS | TX packet appears before timeout
+PASS | packet profile emits coalesced write
+PASS | packet profile payload matches
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | TX packet appears before timeout
+PASS | packet profile emits coalesced write
+PASS | packet profile payload matches
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | TX packet appears before timeout
+PASS | packet profile emits coalesced write
+PASS | packet profile payload matches
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | TX packet appears before timeout
+PASS | packet profile emits coalesced write
+PASS | packet profile payload matches
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | TX packet appears before timeout
+PASS | packet profile emits coalesced write
+PASS | packet profile payload matches
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | TX packet appears before timeout
+PASS | packet profile emits coalesced write
+PASS | packet profile payload matches
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | TX packet appears before timeout
+PASS | ML profile request is 4-beat read
+PASS | TX packet appears before timeout
+PASS | ML profile request is 4-beat read
+PASS | TX packet appears before timeout
+PASS | ML profile request is 4-beat read
+PASS | TX packet appears before timeout
+PASS | ML profile request is 4-beat read
+PASS | completion tag becomes acceptable
+PASS | completion tag becomes acceptable
+PASS | completion tag becomes acceptable
+PASS | completion tag becomes acceptable
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | TX packet appears before timeout
+PASS | TX is stalled before reset test
+PASS | reset clears stalled TX VALID
+PASS | reset clears response VALID signals
+PASS | bridge returns idle after reset
+PASS | TX packet appears before timeout
+PASS | reset clears accepted outstanding read
+PASS | late completion after reset rejected
+PASS | bridge recovers after outstanding-read reset
+PASS | reset clears partial write collection
+PASS | TX packet appears before timeout
+PASS | fresh write succeeds after partial-write reset
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | missing/late WLAST burst rejected without TLP
+PASS | TX packet appears before timeout
+PASS | write after late-WLAST reject is clean
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | W FIFO full deasserts WREADY
+PASS | TX packet appears before timeout
+PASS | FIFO-buffered burst 0 payload correct
+PASS | B response pending before pipelined AW
+PASS | AW accepted while previous B is pending
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | TX packet appears before timeout
+PASS | FIFO-buffered burst 1 payload correct
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | W FIFO drained and WREADY restored
+PASS | TX packet appears before timeout
+PASS | B stalled before reset
+PASS | reset clears stalled B response
+PASS | TX packet appears before timeout
+PASS | write recovers after B-stall reset
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | TX packet appears before timeout
+PASS | completion tag becomes acceptable
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R stalled mid-burst before reset
+PASS | reset clears stalled R response
+PASS | TX packet appears before timeout
+PASS | completion tag becomes acceptable
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | completion tag becomes acceptable
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | completion tag becomes acceptable
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | completion tag becomes acceptable
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | completion tag becomes acceptable
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | completion tag becomes acceptable
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | completion tag becomes acceptable
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | completion tag becomes acceptable
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | completion tag becomes acceptable
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | completion tag becomes acceptable
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | completion tag becomes acceptable
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | completion tag becomes acceptable
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | completion tag becomes acceptable
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | completion tag becomes acceptable
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | completion tag becomes acceptable
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | completion tag becomes acceptable
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | completion tag becomes acceptable
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | completion tag becomes acceptable
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | completion tag becomes acceptable
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | completion tag becomes acceptable
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | completion tag becomes acceptable
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | completion tag becomes acceptable
+PASS | B response becomes valid
+PASS | B ID correct
+PASS | B response code correct
+PASS | mixed: MemWr in AW order with correct addr/len/data
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: MemRd matches an issued AR (addr/len)
+PASS | completion tag becomes acceptable
+PASS | completion tag becomes acceptable
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | completion tag becomes acceptable
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | R beat becomes valid
+PASS | R ID/order correct
+PASS | R data correct
+PASS | R response correct
+PASS | RLAST correct
+PASS | mixed: every MemWr observed
+PASS | mixed: every MemRd observed and completed
+PASS | mixed: bridge idle after concurrent traffic
+
+================ FUNCTIONAL COVERAGE ================
+Read  burst length 1/2/3/4 : 8 / 9 / 7 / 4
+Write burst length 1/2/3/4 : 7 / 10 / 6 / 10
+W-before-AW bursts   : 17
+W FIFO full cycles   : 4
+AW while B pending   : 24
+Late-WLAST rejects   : 1
+Mixed concurrent bursts: 48
+Tag-reuse read bursts: 20
+TX stall cycles      : 158
+R stall cycles       : 151
+B stall cycles       : 67
+Random read bursts   : 28
+Random write bursts  : 30
+Packet profile bursts: 6
+ML profile batches   : 1
+Malformed tests      : 9
+Reset-during-activity: 5
+Out-of-order completions: 11
+Tag-exhaustion tests  : 1
+Boundary rejects     : 2
+Stale completion tests: 2
+=====================================================
+Assertion checks=1655 assertion failures=0 (X-on-VALID=576, W-FIFO=706, stall-stability=373)
+Seed: 0x7fffffff
+REGRESSION SUMMARY: checks=738 passed=738 failed=0
+RESULT: ALL PHASE 3 CHECKS PASSED
+Coverage counters are scenario counters, not a formal coverage percentage.
+Traffic profiles are abstract workload models, not PCIe/ML application compliance.
+=====================================================
+tb_phase3_axi_pcie_bridge.v:1007: $finish called at 7206000 (1ps)
