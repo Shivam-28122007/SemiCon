@@ -1,0 +1,97 @@
+﻿VCD info: dumpfile bridge_stage1.vcd opened for output.
+
+=== TEST 1: Reset ===
+PASS: Reset sequence completed
+
+=== TEST 2: Single-beat AXI Write ===
+PASS: Write TLP type = MemWr
+PASS: Write TLP address correct
+PASS: Write TLP length = 2 DW
+PASS: Write TLP tag correct
+PASS: Write TLP payload correct
+PASS: Write TLP SOP/EOP correct
+PASS: AXI write response correct
+
+=== TEST 3: Independent AW/W Timing ===
+PASS: Write TLP type = MemWr
+PASS: Write TLP address correct
+PASS: Write TLP length = 2 DW
+PASS: Write TLP tag correct
+PASS: Write TLP payload correct
+PASS: Write TLP SOP/EOP correct
+PASS: AXI write response correct
+PASS: AW and W accepted independently
+
+=== TEST 4: 3-beat AXI Write Burst ===
+PASS: Write TLP type = MemWr
+PASS: Write TLP address correct
+PASS: Write TLP length = 2 DW
+PASS: Write TLP tag correct
+PASS: Write TLP payload correct
+PASS: Write TLP SOP/EOP correct
+PASS: Write TLP type = MemWr
+PASS: Write TLP address correct
+PASS: Write TLP length = 2 DW
+PASS: Write TLP tag correct
+PASS: Write TLP payload correct
+PASS: Write TLP SOP/EOP correct
+PASS: Write TLP type = MemWr
+PASS: Write TLP address correct
+PASS: Write TLP length = 2 DW
+PASS: Write TLP tag correct
+PASS: Write TLP payload correct
+PASS: Write TLP SOP/EOP correct
+PASS: AXI write response correct
+PASS: 3-beat AXI INCR burst converted to 3 MemWr TLPs
+
+=== TEST 5: Partial WSTRB Error ===
+PASS: Partial WSTRB correctly rejected with SLVERR
+
+=== TEST 6: Single-beat AXI Read + Successful CplD ===
+PASS: Read TLP type = MemRd
+PASS: Read TLP address correct
+PASS: Read TLP length = 2 DW
+PASS: Read TLP tag correct
+PASS: Read TLP SOP/EOP correct
+PASS: TX valid held under backpressure
+PASS: Successful CplD correctly returned on AXI R channel
+
+=== TEST 7: Read Burst with Multiple Completions ===
+PASS: Read TLP type = MemRd
+PASS: Read TLP address correct
+PASS: Read TLP length = 2 DW
+PASS: Read TLP tag correct
+PASS: Read TLP SOP/EOP correct
+PASS: Read burst beat 0 received correctly
+PASS: Read TLP type = MemRd
+PASS: Read TLP address correct
+PASS: Read TLP length = 2 DW
+PASS: Read TLP tag correct
+PASS: Read TLP SOP/EOP correct
+PASS: Read burst final beat received correctly
+
+=== TEST 8: Completion Error -> AXI SLVERR ===
+PASS: Read TLP type = MemRd
+PASS: Read TLP address correct
+PASS: Read TLP length = 2 DW
+PASS: Read TLP tag correct
+PASS: Read TLP SOP/EOP correct
+PASS: PCIe completion error mapped to AXI SLVERR
+
+=== TEST 9: Wrong Completion Tag Rejection ===
+PASS: Read TLP type = MemRd
+PASS: Read TLP address correct
+PASS: Read TLP length = 2 DW
+PASS: Read TLP tag correct
+PASS: Read TLP SOP/EOP correct
+PASS: Wrong completion tag correctly rejected
+PASS: Correct completion accepted after wrong-tag attempt
+
+============================================================
+Stage-1 Verification Summary
+PASS checks : 69
+FAIL checks : 0
+RESULT      : ALL TESTS PASSED
+============================================================
+
+stage1_baseline_tb_axi4_to_pcie_bridge.v:454: $finish called at 830000 (1ps)

@@ -1,0 +1,1187 @@
+$ librelane --pdk-root /root/.ciel --run-tag phase5 --overwrite config.json (cwd=/content/sarcathon_phase5/reference)
+[09:00:57] INFO     Starting a new run of the 'Classic' flow with    flow.py:654
+[09:00:57] INFO     Starting…                                  sequential.py:339
+[09:00:57] INFO     Gating variable for step 'Verilator.Lint'  sequential.py:362
+                    set to 'False'- the step will be skipped.                   
+[09:00:57] INFO     Skipping step 'Verilator Lint'…            sequential.py:370
+[09:00:57] INFO     Gating variable for step                   sequential.py:362
+                    'Checker.LintTimingConstructs' set to                       
+                    'False'- the step will be skipped.                          
+[09:00:57] INFO     Skipping step 'Lint Timing Error Checker'… sequential.py:370
+[09:00:57] INFO     Gating variable for step                   sequential.py:362
+                    'Checker.LintErrors' set to 'False'- the                    
+                    step will be skipped.                                       
+[09:00:57] INFO     Skipping step 'Lint Errors Checker'…       sequential.py:370
+[09:00:58] INFO     Gating variable for step                   sequential.py:362
+                    'Checker.LintWarnings' set to 'False'- the                  
+                    step will be skipped.                                       
+[09:00:58] INFO     Skipping step 'Lint Warnings Checker'…     sequential.py:370
+[09:00:58] VERBOSE  Running 'Yosys.JsonHeader' at                   step.py:1138
+[09:00:58] VERBOSE  Logging subprocess to                           step.py:1338
+   215/231: $0\wr_error[0:0]                                                    
+Creating register for signal `\sarcathon_axi_pcie_bridge.\wr_error' using       
+[09:01:01] VERBOSE  Running 'Yosys.Synthesis' at                    step.py:1138
+[09:01:01] VERBOSE  Logging subprocess to                           step.py:1338
+   215/231: $0\wr_error[0:0]                                                    
+Creating register for signal `\sarcathon_axi_pcie_bridge.\wr_error' using       
+Running muxtree optimizer on module \sarcathon_axi_pcie_bridge..                
+Running muxtree optimizer on module \sarcathon_axi_pcie_bridge..                
+Running muxtree optimizer on module \sarcathon_axi_pcie_bridge..                
+Running muxtree optimizer on module \sarcathon_axi_pcie_bridge..                
+Running muxtree optimizer on module \sarcathon_axi_pcie_bridge..                
+Running muxtree optimizer on module \sarcathon_axi_pcie_bridge..                
+Running muxtree optimizer on module \sarcathon_axi_pcie_bridge..                
+Running muxtree optimizer on module \sarcathon_axi_pcie_bridge..                
+Running muxtree optimizer on module \sarcathon_axi_pcie_bridge..                
+Running muxtree optimizer on module \sarcathon_axi_pcie_bridge..                
+Running muxtree optimizer on module \sarcathon_axi_pcie_bridge..                
+Running muxtree optimizer on module                                             
+Running ABC script: <abc-temp-dir>/abc.script                                   
+131.5. Finished fast OPT passes.                                                
+Running muxtree optimizer on module \sarcathon_axi_pcie_bridge..                
+135.9. Finished fast OPT passes. (There is nothing left to do.)                 
+Running ABC script: /tmp/yosys-abc-RR91he/abc.script                            
+ABC: Error: The network is combinational.                                       
+──────────────────────────── Unmapped Cells Checker ────────────────────────────
+[09:01:49] VERBOSE  Running 'Checker.YosysUnmappedCells' at         step.py:1138
+[09:01:49] VERBOSE  Running 'Checker.YosysSynthChecks' at           step.py:1138
+[09:01:49] INFO     Check for Yosys check errors clear.           checker.py:131
+─────────────────────── Netlist Assign Statement Checker ───────────────────────
+[09:01:49] VERBOSE  Running 'Checker.NetlistAssignStatements' at    step.py:1138
+[09:01:49] VERBOSE  Running 'OpenROAD.CheckSDCFiles' at             step.py:1138
+[09:01:49] WARNING  'PNR_SDC_FILE' is not defined. Using generic openroad.py:184
+                    fallback SDC for OpenROAD PnR steps.                        
+[09:01:49] WARNING  'SIGNOFF_SDC_FILE' is not defined. Using     openroad.py:188
+                    generic fallback SDC for OpenROAD PnR steps.                
+[09:01:49] VERBOSE  Running 'OpenROAD.CheckMacroInstances' at       step.py:1138
+[09:01:49] VERBOSE  Running 'OpenROAD.STAPrePNR' at                 step.py:1138
+[09:01:49] INFO     Starting STA for the nom_tt_025C_1v80 timing openroad.py:749
+[09:01:49] INFO     Starting STA for the nom_ss_100C_1v60 timing openroad.py:749
+[09:01:49] VERBOSE  Logging subprocess to                           step.py:1338
+[09:01:49] VERBOSE  Logging subprocess to                           step.py:1338
+[09:02:15] INFO     Finished STA for the nom_tt_025C_1v80 timing openroad.py:764
+[09:02:15] INFO     Starting STA for the nom_ff_n40C_1v95 timing openroad.py:749
+[09:02:15] VERBOSE  Logging subprocess to                           step.py:1338
+[09:02:15] INFO     Finished STA for the nom_ss_100C_1v60 timing openroad.py:764
+[09:02:30] INFO     Finished STA for the nom_ff_n40C_1v95 timing openroad.py:764
+[09:02:30] VERBOSE  Running 'OpenROAD.Floorplan' at                 step.py:1138
+[09:02:30] VERBOSE  Logging subprocess to                           step.py:1338
+[09:02:31] VERBOSE  Running 'OpenROAD.DumpRCValues' at              step.py:1138
+[09:02:31] VERBOSE  Logging subprocess to                           step.py:1338
+[INFO ODB-0134] Finished DEF file:                                              
+[09:02:32] VERBOSE  Running 'Odb.CheckMacroAntennaProperties' at    step.py:1138
+[09:02:32] VERBOSE  Running 'Odb.SetPowerConnections' at            step.py:1138
+[09:02:32] VERBOSE  Logging subprocess to                           step.py:1338
+[09:02:34] VERBOSE  Running 'Odb.ManualMacroPlacement' at           step.py:1138
+[09:02:34] VERBOSE  Running 'OpenROAD.CutRows' at                   step.py:1138
+[09:02:34] VERBOSE  Logging subprocess to                           step.py:1338
+[09:02:35] VERBOSE  Running 'OpenROAD.TapEndcapInsertion' at        step.py:1138
+[09:02:35] VERBOSE  Logging subprocess to                           step.py:1338
+[09:02:37] VERBOSE  Running 'Odb.AddPDNObstructions' at             step.py:1138
+[09:02:37] VERBOSE  Running 'OpenROAD.GeneratePDN' at               step.py:1138
+[09:02:37] VERBOSE  Logging subprocess to                           step.py:1338
+[09:02:40] VERBOSE  Running 'Odb.RemovePDNObstructions' at          step.py:1138
+[09:02:40] VERBOSE  Running 'Odb.AddRoutingObstructions' at         step.py:1138
+[09:02:40] VERBOSE  Running 'OpenROAD.GlobalPlacementSkipIO' at     step.py:1138
+[09:02:40] VERBOSE  Running 'OpenROAD.IOPlacement' at               step.py:1138
+[09:02:40] VERBOSE  Running 'Odb.CustomIOPlacement' at              step.py:1138
+[09:02:40] VERBOSE  Logging subprocess to                           step.py:1338
+Horizontal Tracks Origin: 340, Count: 870, Step: 680                            
+Vertical Tracks Origin: 230, Count: 1262, Step: 460                             
+Starting track index:  18                                                       
+Starting track index:  29                                                       
+Starting track index:  17                                                       
+Starting track index:  96                                                       
+[09:02:41] VERBOSE  Running 'Odb.ApplyDEFTemplate' at               step.py:1138
+[09:02:41] VERBOSE  Running 'OpenROAD.GlobalPlacement' at           step.py:1138
+[09:02:41] VERBOSE  Logging subprocess to                           step.py:1338
+[09:02:45] WARNING  [GRT-0281] Net clk has a large fanout of     openroad.py:314
+[09:02:45] WARNING  [GRT-0281] Net rst_n has a large fanout of   openroad.py:314
+[09:02:49] VERBOSE  Running 'Odb.WriteVerilogHeader' at             step.py:1138
+[09:02:49] VERBOSE  Logging subprocess to                           step.py:1338
+───────────────────────── Power Grid Violation Checker ─────────────────────────
+[09:02:50] VERBOSE  Running 'Checker.PowerGridViolations' at        step.py:1138
+[09:02:50] VERBOSE  Running 'OpenROAD.STAMidPNR' at                 step.py:1138
+[09:02:51] VERBOSE  Logging subprocess to                           step.py:1338
+[09:03:21] VERBOSE  Running 'OpenROAD.RepairDesignPostGPL' at       step.py:1138
+[09:03:21] VERBOSE  Logging subprocess to                           step.py:1338
+[09:03:23] WARNING  [STA-1140]                                   openroad.py:314
+[09:03:24] WARNING  [STA-1140]                                   openroad.py:314
+[09:03:24] WARNING  [STA-1140]                                   openroad.py:314
+[09:03:25] WARNING  [STA-1140]                                   openroad.py:314
+[09:03:26] WARNING  [STA-1140]                                   openroad.py:314
+[09:03:26] WARNING  [STA-1140]                                   openroad.py:314
+[09:04:08] WARNING  [RSZ-0020] found 2 floating nets.            openroad.py:314
+[09:04:13] VERBOSE  Running 'Odb.ManualGlobalPlacement' at          step.py:1138
+[09:04:13] VERBOSE  Running 'OpenROAD.DetailedPlacement' at         step.py:1138
+[09:04:13] VERBOSE  Logging subprocess to                           step.py:1338
+[09:04:16] VERBOSE  Running 'OpenROAD.CTS' at                       step.py:1138
+[09:04:16] VERBOSE  Logging subprocess to                           step.py:1338
+[09:04:17] WARNING  [STA-1140]                                   openroad.py:314
+[09:04:18] WARNING  [STA-1140]                                   openroad.py:314
+[09:04:19] WARNING  [STA-1140]                                   openroad.py:314
+[09:04:20] WARNING  [STA-1140]                                   openroad.py:314
+[09:04:20] WARNING  [STA-1140]                                   openroad.py:314
+[09:04:21] WARNING  [STA-1140]                                   openroad.py:314
+[INFO] Running Clock Tree Synthesis…                                            
+[09:05:07] VERBOSE  Running 'OpenROAD.STAMidPNR-1' at               step.py:1138
+[09:05:07] VERBOSE  Logging subprocess to                           step.py:1338
+[09:05:28] VERBOSE  Running 'OpenROAD.ResizerTimingPostCTS' at      step.py:1138
+[09:05:28] VERBOSE  Logging subprocess to                           step.py:1338
+[09:05:30] WARNING  [STA-1140]                                   openroad.py:314
+[09:05:30] WARNING  [STA-1140]                                   openroad.py:314
+[09:05:31] WARNING  [STA-1140]                                   openroad.py:314
+[09:05:31] WARNING  [STA-1140]                                   openroad.py:314
+[09:05:32] WARNING  [STA-1140]                                   openroad.py:314
+[09:05:33] WARNING  [STA-1140]                                   openroad.py:314
+[09:16:42] WARNING  [RSZ-0062] Unable to repair all setup        openroad.py:314
+[09:18:59] VERBOSE  Running 'OpenROAD.STAMidPNR-2' at               step.py:1138
+[09:18:59] VERBOSE  Logging subprocess to                           step.py:1338
+[09:19:25] VERBOSE  Running 'OpenROAD.GlobalRouting' at             step.py:1138
+[09:19:25] VERBOSE  Logging subprocess to                           step.py:1338
+[INFO GRT-0101] Running extra iterations to remove overflow.                    
+[09:19:33] VERBOSE  Running 'OpenROAD.CheckAntennas' at             step.py:1138
+[09:19:33] VERBOSE  Logging subprocess to                           step.py:1338
+[09:19:56] INFO     Gating variable for step                   sequential.py:362
+                    'False'- the step will be skipped.                          
+[09:19:56] INFO     Skipping step 'Repair Design (Post-Global  sequential.py:370
+[09:19:56] VERBOSE  Running 'Odb.DiodesOnPorts' at                  step.py:1138
+[09:19:56] INFO     Gating variable for step                   sequential.py:362
+                    'False'- the step will be skipped.                          
+[09:19:56] INFO     Skipping step 'Heuristic Diode Insertion'… sequential.py:370
+[09:19:56] VERBOSE  Running 'OpenROAD.RepairAntennas' at            step.py:1138
+[09:19:56] VERBOSE  Running 'OpenROAD.DiodeInsertion' at            step.py:1138
+[09:19:56] VERBOSE  Logging subprocess to                           step.py:1338
+[09:20:43] WARNING  [GRT-0243] Unable to repair antennas on net  openroad.py:314
+[09:21:28] VERBOSE  Running 'OpenROAD.CheckAntennas' at             step.py:1138
+[09:21:28] VERBOSE  Logging subprocess to                           step.py:1338
+[09:21:51] VERBOSE  Running 'OpenROAD.ResizerTimingPostGRT' at      step.py:1138
+[09:21:51] VERBOSE  Logging subprocess to                           step.py:1338
+[09:21:52] WARNING  [STA-1140]                                   openroad.py:314
+[09:21:53] WARNING  [STA-1140]                                   openroad.py:314
+[09:21:54] WARNING  [STA-1140]                                   openroad.py:314
+[09:21:54] WARNING  [STA-1140]                                   openroad.py:314
+[09:21:55] WARNING  [STA-1140]                                   openroad.py:314
+[09:21:55] WARNING  [STA-1140]                                   openroad.py:314
+[INFO GRT-0101] Running extra iterations to remove overflow.                    
+[09:39:40] WARNING  [RSZ-0062] Unable to repair all setup        openroad.py:314
+[INFO GRT-0101] Running extra iterations to remove overflow.                    
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10489_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _07535_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10489_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _07535_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10489_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _07535_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10489_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _07535_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10489_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _07535_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10489_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _07535_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10489_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _07535_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10489_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _07535_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10489_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _07535_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10589_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08286_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10589_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08286_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10589_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08286_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10589_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08286_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10589_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08286_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10589_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08286_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10589_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08286_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10589_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08286_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10589_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08286_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10590_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08287_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10590_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08287_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10590_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08287_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10590_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08287_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10590_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08287_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10590_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08287_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10590_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08287_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10590_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08287_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10590_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08287_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10591_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08288_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10591_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08288_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10591_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08288_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10591_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08288_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10591_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08288_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10591_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08288_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10591_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08288_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10591_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08288_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10591_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08288_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10592_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08289_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10592_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08289_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10592_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08289_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10592_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08289_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10592_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08289_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10592_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08289_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10592_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08289_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10592_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08289_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10592_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08289_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10593_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08290_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10593_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08290_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10593_/D in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _08290_/X in openroad.py:314
+[09:39:45] WARNING  [EST-0026] Missing route to pin _10593_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08290_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10593_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08290_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10593_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08290_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10593_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08290_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10593_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08290_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10593_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08290_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10595_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08292_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10595_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08292_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10595_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08292_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10595_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08292_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10595_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08292_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10595_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08292_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10595_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08292_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10595_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08292_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10595_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08292_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10596_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08293_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10596_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08293_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10596_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08293_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10596_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08293_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10596_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08293_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10596_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08293_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10596_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08293_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10596_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08293_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10596_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08293_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10597_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08294_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10597_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08294_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10597_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08294_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10597_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08294_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10597_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08294_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10597_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08294_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10597_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08294_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10597_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08294_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10597_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08294_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10598_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08295_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10598_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08295_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10598_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08295_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10598_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08295_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10598_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08295_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10598_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08295_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10598_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08295_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10598_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08295_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10598_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08295_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10599_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08296_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10599_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08296_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10599_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08296_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10599_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08296_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10599_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08296_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10599_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08296_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10599_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08296_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10599_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08296_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10599_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08296_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10600_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08297_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10600_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08297_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10600_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08297_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10600_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08297_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10600_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08297_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10600_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08297_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10600_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08297_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10600_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08297_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10600_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08297_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10602_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08299_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10602_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08299_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10602_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08299_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10602_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08299_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10602_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08299_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10602_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08299_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10602_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08299_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10602_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08299_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10602_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08299_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10603_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08300_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10603_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08300_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10603_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08300_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10603_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08300_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10603_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08300_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10603_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08300_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10603_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08300_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10603_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08300_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10603_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08300_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10605_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08302_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10605_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08302_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10605_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08302_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10605_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08302_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10605_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08302_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10605_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08302_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10605_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08302_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10605_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08302_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10605_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08302_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10607_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08304_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10607_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08304_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10607_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08304_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10607_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08304_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10607_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08304_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10607_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08304_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10607_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08304_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10607_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08304_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10607_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08304_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10608_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08305_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10608_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08305_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10608_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08305_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10608_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08305_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10608_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08305_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10608_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08305_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10608_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08305_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10608_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08305_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10608_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08305_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10610_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08307_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10610_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08307_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10610_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08307_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10610_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08307_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10610_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08307_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10610_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08307_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10610_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08307_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10610_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08307_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10610_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08307_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10612_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08318_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10612_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08318_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10612_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08318_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10612_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08318_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10612_/D in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _08318_/X in openroad.py:314
+[09:39:46] WARNING  [EST-0026] Missing route to pin _10612_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08318_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10612_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08318_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10612_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08318_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10612_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08318_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10613_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08319_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10613_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08319_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10613_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08319_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10613_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08319_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10613_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08319_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10613_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08319_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10613_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08319_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10613_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08319_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10613_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08319_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10614_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08320_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10614_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08320_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10614_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08320_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10614_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08320_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10614_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08320_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10614_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08320_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10614_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08320_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10614_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08320_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10614_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08320_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10615_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08321_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10615_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08321_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10615_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08321_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10615_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08321_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10615_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08321_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10615_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08321_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10615_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08321_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10615_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08321_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10615_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08321_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10616_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08322_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10616_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08322_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10616_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08322_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10616_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08322_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10616_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08322_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10616_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08322_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10616_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08322_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10616_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08322_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10616_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08322_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10617_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08327_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10617_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08327_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10617_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08327_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10617_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08327_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10617_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08327_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10617_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08327_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10617_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08327_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10617_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08327_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10617_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08327_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10618_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08328_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10618_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08328_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10618_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08328_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10618_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08328_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10618_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08328_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10618_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08328_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10618_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08328_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10618_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08328_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10618_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08328_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10620_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08330_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10620_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08330_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10620_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08330_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10620_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08330_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10620_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08330_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10620_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08330_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10620_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08330_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10620_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08330_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10620_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08330_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10622_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08332_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10622_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08332_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10622_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08332_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10622_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08332_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10622_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08332_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10622_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08332_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10622_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08332_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10622_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08332_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10622_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08332_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10629_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08339_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10629_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08339_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10629_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08339_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10629_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08339_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10629_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08339_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10629_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08339_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10629_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08339_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10629_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08339_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10629_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08339_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10630_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08340_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10630_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08340_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10630_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08340_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10630_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08340_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10630_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08340_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10630_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08340_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10630_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08340_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10630_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08340_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10630_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08340_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10631_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08341_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10631_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08341_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10631_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08341_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10631_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08341_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10631_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08341_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10631_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08341_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10631_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08341_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10631_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08341_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10631_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08341_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10632_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08342_/X in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _10632_/D in openroad.py:314
+[09:39:47] WARNING  [EST-0026] Missing route to pin _08342_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10632_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08342_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10632_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08342_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10632_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08342_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10632_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08342_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10632_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08342_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10632_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08342_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10632_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08342_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10634_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08344_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10634_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08344_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10634_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08344_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10634_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08344_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10634_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08344_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10634_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08344_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10634_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08344_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10634_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08344_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10634_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08344_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10636_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08346_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10636_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08346_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10636_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08346_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10636_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08346_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10636_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08346_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10636_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08346_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10636_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08346_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10636_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08346_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10636_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08346_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10637_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08347_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10637_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08347_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10637_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08347_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10637_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08347_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10637_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08347_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10637_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08347_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10637_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08347_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10637_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08347_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10637_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08347_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10638_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08348_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10638_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08348_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10638_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08348_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10638_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08348_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10638_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08348_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10638_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08348_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10638_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08348_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10638_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08348_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10638_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08348_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10639_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08349_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10639_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08349_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10639_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08349_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10639_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08349_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10639_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08349_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10639_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08349_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10639_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08349_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10639_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08349_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10639_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08349_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10640_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08350_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10640_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08350_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10640_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08350_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10640_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08350_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10640_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08350_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10640_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08350_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10640_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08350_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10640_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08350_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10640_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08350_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10641_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08352_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10641_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08352_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10641_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08352_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10641_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08352_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10641_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08352_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10641_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08352_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10641_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08352_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10641_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08352_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10641_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08352_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10643_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08356_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10643_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08356_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10643_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08356_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10643_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08356_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10643_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08356_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10643_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08356_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10643_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08356_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10643_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08356_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10643_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08356_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10644_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08357_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10644_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08357_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10644_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08357_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10644_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08357_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10644_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08357_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10644_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08357_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10644_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08357_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10644_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08357_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10644_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08357_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10645_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08359_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10645_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08359_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10645_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08359_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10645_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08359_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10645_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08359_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10645_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08359_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10645_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08359_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10645_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08359_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10645_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08359_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10646_/D in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _08361_/X in openroad.py:314
+[09:39:48] WARNING  [EST-0026] Missing route to pin _10646_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08361_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10646_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08361_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10646_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08361_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10646_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08361_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10646_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08361_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10646_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08361_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10646_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08361_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10646_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08361_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10504_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07706_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10504_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07706_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10504_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07706_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10504_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07706_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10504_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07706_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10504_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07706_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10504_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07706_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10504_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07706_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10504_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07706_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10649_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08364_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10649_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08364_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10649_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08364_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10649_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08364_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10649_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08364_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10649_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08364_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10649_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08364_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10649_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08364_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10649_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08364_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10652_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08367_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10652_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08367_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10652_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08367_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10652_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08367_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10652_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08367_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10652_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08367_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10652_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08367_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10652_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08367_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10652_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08367_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10654_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08370_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10654_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08370_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10654_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08370_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10654_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08370_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10654_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08370_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10654_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08370_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10654_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08370_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10654_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08370_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10654_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08370_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10655_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08371_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10655_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08371_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10655_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08371_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10655_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08371_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10655_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08371_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10655_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08371_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10655_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08371_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10655_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08371_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10655_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08371_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10656_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08372_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10656_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08372_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10656_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08372_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10656_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08372_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10656_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08372_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10656_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08372_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10656_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08372_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10656_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08372_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10656_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08372_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10657_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08373_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10657_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08373_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10657_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08373_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10657_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08373_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10657_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08373_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10657_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08373_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10657_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08373_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10657_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08373_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10657_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08373_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10658_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08374_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10658_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08374_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10658_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08374_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10658_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08374_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10658_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08374_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10658_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08374_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10658_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08374_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10658_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08374_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10658_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08374_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10505_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07717_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10505_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07717_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10505_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07717_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10505_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07717_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10505_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07717_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10505_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07717_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10505_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07717_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10505_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07717_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10505_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _07717_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10659_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08375_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10659_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08375_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10659_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08375_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10659_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08375_/X in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _10659_/D in openroad.py:314
+[09:39:49] WARNING  [EST-0026] Missing route to pin _08375_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10659_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08375_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10659_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08375_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10659_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08375_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10659_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08375_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10661_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08377_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10661_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08377_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10661_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08377_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10661_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08377_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10661_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08377_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10661_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08377_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10661_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08377_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10661_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08377_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10661_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08377_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10662_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08378_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10662_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08378_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10662_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08378_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10662_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08378_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10662_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08378_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10662_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08378_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10662_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08378_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10662_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08378_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10662_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08378_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10663_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08379_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10663_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08379_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10663_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08379_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10663_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08379_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10663_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08379_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10663_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08379_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10663_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08379_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10663_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08379_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10663_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08379_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10664_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08380_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10664_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08380_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10664_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08380_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10664_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08380_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _10664_/D in openroad.py:314
+[09:39:50] WARNING  [EST-0026] Missing route to pin _08380_/X in openroad.py:314
+[09:39:50] WARNING  [EST-0026] message limit (1000) reached.     openroad.py:314
+[09:40:04] VERBOSE  Running 'OpenROAD.STAMidPNR-3' at               step.py:1138
+[09:40:04] VERBOSE  Logging subprocess to                           step.py:1338
+[09:40:30] VERBOSE  Running 'OpenROAD.DetailedRouting' at           step.py:1138
+[09:40:30] INFO     Running TritonRoute with 2 threads…         openroad.py:2004
+[09:40:30] VERBOSE  Logging subprocess to                           step.py:1338
+[09:40:30] WARNING  [DRT-0349] LEF58_ENCLOSURE with no CUTCLASS  openroad.py:314
+[09:40:30] WARNING  [DRT-0349] LEF58_ENCLOSURE with no CUTCLASS  openroad.py:314
+[09:40:30] WARNING  [DRT-0349] LEF58_ENCLOSURE with no CUTCLASS  openroad.py:314
+[09:40:30] WARNING  [DRT-0349] LEF58_ENCLOSURE with no CUTCLASS  openroad.py:314
+[09:40:30] WARNING  [DRT-0349] LEF58_ENCLOSURE with no CUTCLASS  openroad.py:314
+[09:40:31] WARNING  [DRT-0349] LEF58_ENCLOSURE with no CUTCLASS  openroad.py:314
+[09:40:31] WARNING  [DRT-0349] LEF58_ENCLOSURE with no CUTCLASS  openroad.py:314
+[09:40:31] WARNING  [DRT-0349] LEF58_ENCLOSURE with no CUTCLASS  openroad.py:314
+[09:40:31] WARNING  [DRT-0349] LEF58_ENCLOSURE with no CUTCLASS  openroad.py:314
+[09:40:31] WARNING  [DRT-0349] LEF58_ENCLOSURE with no CUTCLASS  openroad.py:314
+[INFO] Running antenna repair iteration 1…                                      
+[10:12:46] WARNING  [GRT-0243] Unable to repair antennas on net  openroad.py:314
+[INFO] Running antenna repair iteration 2…                                      

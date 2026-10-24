@@ -1,0 +1,93 @@
+no oauth token found for github.com
+[18:01:18] INFO     Starting a new run of the 'Classic' flow with    flow.py:654
+                    the tag 'phase5'.                                           
+[18:01:18] INFO     Starting…                                  sequential.py:339
+[18:01:18] INFO     Gating variable for step 'Verilator.Lint'  sequential.py:362
+                    set to 'False'- the step will be skipped.                   
+[18:01:18] INFO     Skipping step 'Verilator Lint'…            sequential.py:370
+[18:01:18] INFO     Gating variable for step                   sequential.py:362
+                    'Checker.LintTimingConstructs' set to                       
+                    'False'- the step will be skipped.                          
+[18:01:19] INFO     Skipping step 'Lint Timing Error Checker'… sequential.py:370
+[18:01:19] INFO     Gating variable for step                   sequential.py:362
+                    'Checker.LintErrors' set to 'False'- the                    
+                    step will be skipped.                                       
+[18:01:19] INFO     Skipping step 'Lint Errors Checker'…       sequential.py:370
+[18:01:19] INFO     Gating variable for step                   sequential.py:362
+                    'Checker.LintWarnings' set to 'False'- the                  
+                    step will be skipped.                                       
+[18:01:19] INFO     Skipping step 'Lint Warnings Checker'…     sequential.py:370
+───────────────────────────── Generate JSON Header ─────────────────────────────
+[18:01:19] VERBOSE  Running 'Yosys.JsonHeader' at                   step.py:1138
+                    'runs/phase5/01-yosys-jsonheader'…                          
+[18:01:20] VERBOSE  Logging subprocess to                           step.py:1338
+                    'runs/phase5/01-yosys-jsonheader/yosys-jsonhead             
+                    er.log'…                                                    
+Traceback (most recent call last):                                              
+  File                                                                          
+"/usr/local/lib/python3.13/dist-packages/librelane/scripts/pyosys/json_header.py
+", line 16, in <module>                                                         
+    import click                                                                
+  File "/usr/local/lib/python3.13/dist-packages/click/__init__.py", line 10, in 
+<module>                                                                        
+    from .core import Argument as Argument                                      
+  File "/usr/local/lib/python3.13/dist-packages/click/core.py", line 6, in      
+<module>                                                                        
+    import inspect                                                              
+  File "/usr/lib/python3.13/inspect.py", line 146, in <module>                  
+    import dis                                                                  
+  File "/usr/lib/python3.13/dis.py", line 8, in <module>                        
+    from opcode import *                                                        
+  File "/usr/lib/python3.13/opcode.py", line 12, in <module>                    
+    import _opcode                                                              
+ModuleNotFoundError: No module named '_opcode'                                  
+                                                                                
+ /----------------------------------------------------------------------------\ 
+ |  yosys -- Yosys Open SYnthesis Suite                                       | 
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         | 
+ |  Distributed under an ISC-like license, type "license" to see terms        | 
+ \----------------------------------------------------------------------------/ 
+ Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2  
+-fPIC -O3)                                                                      
+ERROR: Python interpreter encountered an exception.                             
+[18:01:20] ERROR    Subprocess had a non-zero exit.                 step.py:1383
+[18:01:20] ERROR    Last 10 line(s):                                step.py:1388
+                        import _opcode                                          
+                    ModuleNotFoundError: No module named '_opcode'              
+                                                                                
+                     /---------------------------------------------             
+                    -------------------------------\                            
+                     |  yosys -- Yosys Open SYnthesis Suite                     
+                    |                                                           
+                     |  Copyright (C) 2012 - 2026  Claire Xenia                 
+                    Wolf <claire@yosyshq.com>         |                         
+                     |  Distributed under an ISC-like license, type             
+                    "license" to see terms        |                             
+                     \---------------------------------------------             
+                    -------------------------------/                            
+                     Yosys 0.62 (git sha1                                       
+                    7326bb7d6641500ecb285c291a54a662cb1e76cf,                   
+                    clang++ 21.1.2 -fPIC -O3)                                   
+                    ERROR: Python interpreter encountered an                    
+                    exception.                                                  
+[18:01:20] ERROR    Full log file:                                  step.py:1391
+                    'runs/phase5/01-yosys-jsonheader/yosys-jsonhead             
+                    er.log'                                                     
+Classic - Stage 5 - Generate JSON Header ━                          4/80 0:00:01
+[18:01:20] ERROR    The following error was encountered while    __main__.py:189
+                    running the flow:                                           
+                    Generate JSON Header: subprocess (1,                        
+                    ['yosys', '-y',                                             
+                    '/usr/local/lib/python3.13/dist-packages/lib                
+                    relane/scripts/pyosys/json_header.py', '--',                
+                    '--config-in',                                              
+                    '/content/sarcathon_phase5/reference/runs/ph                
+                    ase5/01-yosys-jsonheader/config.json',                      
+                    '--extra-in',                                               
+                    '/content/sarcathon_phase5/reference/runs/ph                
+                    ase5/01-yosys-jsonheader/extra.json',                       
+                    '--output',                                                 
+                    '/content/sarcathon_phase5/reference/runs/ph                
+                    ase5/01-yosys-jsonheader/sarcathon_axi_pcie_                
+                    bridge.h.json']) failed                                     
+[18:01:20] ERROR    LibreLane will now quit.                     __main__.py:190
